@@ -1,6 +1,8 @@
 const Client = require("./lib/Client");
-const Event = require("./lib/event/Event");
+const Event = require("./lib/Event");
+const Logger = require("./lib/util/Logger");
 module.exports = {
     Client,
-    Event
+    Event,
+    Logger,
 }
