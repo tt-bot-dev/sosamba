@@ -9,5 +9,6 @@
   "private": false,
   "dependencies": {
     "eris": "github:abalabahaha/eris#dev"
-  }
+  },
+  "typings": "lib/sosamba.d.ts"
 }
