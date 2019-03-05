@@ -22,7 +22,7 @@ echo "Committing..."
 git commit -m "Build documentation for $TRAVIS_COMMIT" >/dev/null 2>&1
 echo "Pushing.."
 
-git push https://tt-bot:$GIT_ACCESS_TOKEN@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH #>/dev/null 2>&1
+git push https://tt-bot:$GIT_ACCESS_TOKEN@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH >/dev/null 2>&1
 
 echo "Successfully built and pushed the documentation"
 
