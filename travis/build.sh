@@ -7,6 +7,7 @@ if [ "$(git log -1 $TRAVIS_COMMIT --pretty="%aN")" == "tt-bot" ]; then
 fi
 
 echo "Generating documentation..."
+git checkout $TRAVIS_BRANCH
 node generateDocs
 
 git config --global user.name "tt.bot" >/dev/null 2>&1
