@@ -15,11 +15,12 @@ git config --global user.email \
     "whatdidyouthinkiwontleakmyprivate@email.cz" \
     >/dev/null 2>&1 
 
+ls docs/
 echo "Adding the documentation to git update list"
-git add docs/ >/dev/null 2>&1
+git add docs/ #>/dev/null 2>&1
 
 echo "Committing..."
-git commit -m "Build documentation for $TRAVIS_COMMIT" >/dev/null 2>&1
+git commit -m "Build documentation for $TRAVIS_COMMIT" #>/dev/null 2>&1
 echo "Pushing.."
 
 git push https://tt-bot:$GIT_ACCESS_TOKEN@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH #>/dev/null 2>&1
