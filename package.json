@@ -1,6 +1,6 @@
 {
   "name": "sosamba",
-  "version": "0.0.1",
+  "version": "0.0.2-rc",
   "description": "A Discord framework based on Eris library.",
   "main": "index.js",
   "repository": "https://github.com/tt-bot-dev/sosamba",
@@ -10,5 +10,14 @@
   "dependencies": {
     "eris": "github:abalabahaha/eris#dev"
   },
-  "typings": "lib/sosamba.d.ts"
+  "typings": "lib/sosamba.d.ts",
+  "devDependencies": {
+    "docma": "^3.2.2",
+    "eslint": "^5.15.1"
+  },
+  "scripts": {
+    "serve-docs": "docma serve",
+    "build-docs": "node generateDocs",
+    "test": "eslint ."
+  }
 }

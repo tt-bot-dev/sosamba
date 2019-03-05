@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+    - "node"
+cache:
+    directories:
+        - "node_modules"
+
+jobs:
+  include:
+    - stage: test
+      script: bash ./travis/test.sh
+    - stage: build
+      if: type = push
+      script: bash ./travis/build.sh
+
+matrix:
+  allow_failure:
+    - stage: test

@@ -12,7 +12,7 @@ class SosambaEventErrorEvent extends Event {
         });
     }
     run(err) {
-        this.log.error(err)
+        this.log.error(err);
     }
 }
 

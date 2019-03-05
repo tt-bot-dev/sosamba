@@ -15,7 +15,7 @@ class ReadyEvent extends Event {
         this.sosamba.editStatus("online", {
             name: `A testing Sosamba prototype | ${this.sosamba.options.prefix}`,
             type: 0
-        })
+        });
     }
 }
 

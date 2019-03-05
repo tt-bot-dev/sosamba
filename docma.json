@@ -1,0 +1,62 @@
+{
+    "src": [
+        {
+            "readme": "./README.md"
+        },
+        {
+            "sosamba": [
+                "./lib/**/*.js",
+                "!./lib/events/**/*.js"
+            ]
+            
+        }
+    ],
+    "dest": "./docs",
+    "clean": true,
+    "app": {
+        "title": "Sosamba",
+        "base": "/sosamba/",
+        "entrance": "content:readme",
+        "routing": "query",
+        "server": "github"
+    },
+    "markdown": {
+        "gfm": true,
+        "tables": true,
+        "emoji": true
+    },
+    "template": {
+        "options": {
+            "title": "Sosamba",
+            "navbar": {
+                "dark": true,
+                "enabled": true,
+                "menu": [
+                    {
+                        "label": "Readme",
+                        "href": "?content=readme"
+                    },
+                    {
+                        "label": "Docs",
+                        "href": "?api=sosamba"
+                    },
+                    {
+                        "label": "GitHub",
+                        "href": "https://github.com/tt-bot-dev/sosamba",
+                        "target": "_blank"
+                    }]
+            },
+            "symbols": {
+                "params": "table",
+                "props": "table",
+                "enums": "table"
+            }
+        }
+    },
+    "jsdoc": {
+        "plugins": [
+            "plugins/underscore",
+            "plugins/markdown"
+        ]
+    }
+}
