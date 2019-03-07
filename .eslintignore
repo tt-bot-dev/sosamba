@@ -1,2 +1,4 @@
 # Disable linting in my testing directory
 test/
+# Disable linting of documentation
+docs/
