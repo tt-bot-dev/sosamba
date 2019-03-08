@@ -6,7 +6,8 @@
         {
             "sosamba": [
                 "./lib/**/*.js",
-                "!./lib/events/**/*.js"
+                "!./lib/events/**/*.js",
+                "./index.js"
             ]
             
         }
