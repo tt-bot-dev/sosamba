@@ -1,4 +1,3 @@
-<!-- *Might very likely smell like a snide Klasa rewritten to use Eris, but who cares* -->
 # Sosamba [![Build status][azp badge]][azp]
 A Discord framework based on Eris library, currently in an alpha stage.
 
