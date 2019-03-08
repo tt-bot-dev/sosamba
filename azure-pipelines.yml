@@ -28,6 +28,7 @@ steps:
   env:
     # Backwards compat with travis
     TRAVIS_COMMIT: $(Build.SourceVersion) 
+  condition: not(or(eq(variables['Build.RequestedForEmail'], 'whatdidyouthinkiwontleakmyprivate@email.cz'), eq(variables['Build.RequestedForId'], 'tt-bot')))
 
 - task: Bash@3
   inputs:
@@ -40,3 +41,4 @@ steps:
     TRAVIS_BRANCH: $(Build.SourceBranchName)
     TRAVIS_REPO_SLUG: tt-bot-dev/sosamba
     GIT_ACCESS_TOKEN: $(git.accessToken)
+  condition: not(or(eq(variables['Build.RequestedForEmail'], 'whatdidyouthinkiwontleakmyprivate@email.cz'), eq(variables['Build.RequestedForId'], 'tt-bot')))
