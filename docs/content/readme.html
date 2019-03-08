@@ -1,14 +1,30 @@
 
-<html><head></head><body><h1 id="sosamba">sosamba</h1>
+<html><head></head><body><p>&lt;!-- *Might very likely smell like a snide Klasa rewritten to use Eris, but who cares* --&gt;
+</p>
+<h1 id="sosamba">Sosamba <a href="https://dev.azure.com/tt-bot-dev/sosamba/_build/latest?definitionId=3&amp;branchName=master"><img src="https://dev.azure.com/tt-bot-dev/sosamba/_apis/build/status/tt-bot-dev.sosamba?branchName=master" alt="Build status" style="max-width: 100%;"></a></h1>
 <hr />
-<p>An upcoming Discord framework based on Eris library.</p>
+<p>A Discord framework based on Eris library, currently in an alpha stage.</p>
+<h2 id="how-to-use-sosamba">How to use Sosamba</h2>
+<hr />
+<p>You can look at the documentation <a href="https://tt-bot-dev.github.io/sosamba">here</a>, or look at a bundled (currently incomplete) example at the <a href="example/">example/</a> folder.</p>
+<h2 id="what-does-sosamba-aim-to-do-">What does Sosamba aim to do?</h2>
+<hr />
+<p>Many things. Most of them are tt.bot's features, however improved in order to be efficient. (for example, we currently register an event listener in some commands, which may lead to memory leak issues). The main one though, is to use as least production dependencies as possible.</p>
+<p>Currently, you can do these things:</p>
+<ul>
+<li>Commands with an extendable context</li>
+<li>Event listeners</li>
+<li>Reaction menus</li>
+<li>Custom argument parsers to suit your needs</li>
+</ul>
+<p>There will be likely more features included than that, though.</p>
 <h2 id="why-this-name-">Why this name?</h2>
 <hr />
 <p>И пoчему нет? (Why not?)</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <hr />
 <ul>
-<li>Node.js v&gt;=10</li>
-<li>Eris</li>
+<li><a href="https://nodejs.org">Node.js</a>, v10 and higher. We already use some advanced features that Node v8 does not support.</li>
+<li><a href="https://github.com/abalabahaha/eris">Eris</a></li>
 </ul>
 </body></html>
