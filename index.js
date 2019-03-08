@@ -10,6 +10,10 @@ const Constants = require("./lib/Constants");
 const ReactionMenu = require("./lib/structures/ReactionMenu");
 const GlobalUser = require("./lib/structures/GlobalUser");
 const { constructQuery } = require("./lib/argParsers/switchSerializers/erisObjects");
+/**
+ * A framework that simply doesn't сoсать anyone
+ * @module Sosamba
+ */
 module.exports = {
     Client,
     Event,
