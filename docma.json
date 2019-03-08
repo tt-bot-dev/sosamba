@@ -36,15 +36,22 @@
                 "menu": [
                     {
                         "label": "Readme",
-                        "href": "?content=readme"
+                        "href": "?content=readme",
+                        "iconClass": "fas fa-mouse-pointer"
                     },
                     {
                         "label": "Docs",
-                        "href": "?api=sosamba"
+                        "href": "?api=sosamba",
+                        "iconClass": "fas fa-book"
                     },
                     {
                         "label": "GitHub",
                         "href": "https://github.com/tt-bot-dev/sosamba",
+                        "target": "_blank",
+                        "iconClass": "fab fa-github"
+                    }, {
+                        "label": "Azure Pipelines",
+                        "href": "https://dev.azure.com/tt-bot-dev/sosamba",
                         "target": "_blank"
                     }]
             },

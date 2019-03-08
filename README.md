@@ -8,6 +8,7 @@ You can look at the documentation [here][docs], or look at a bundled (currently 
 Many things. Most of them are tt.bot's features, however improved in order to be efficient. (for example, we currently register an event listener in some commands, which may lead to memory leak issues). The main one though, is to use as least production dependencies as possible.
 
 Currently, you can do these things:
+
 - Commands with an extendable context
 - Event listeners
 - Reaction menus
