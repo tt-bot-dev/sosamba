@@ -1,8 +1,11 @@
 #!/bin/bash
 
-if [ "$(git log -1 $TRAVIS_COMMIT --pretty="%aN")" == "tt-bot" ]; then
+BOOL="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
+if [ $BOOL == "tt-bot" ]; then
     echo "A commit is made by tt-bot, ignoring."
     exit 0
+else 
+    echo "Building docs for $BOOL"
 fi
 
 echo "Checking out $TRAVIS_BRANCH..."
@@ -13,7 +16,7 @@ npm test -- --fix
 echo "Generating documentation..."
 node generateDocs
 
-git config --global user.name "tt.bot" >/dev/null 2>&1
+git config --global user.name "tt-bot" >/dev/null 2>&1
 # this is on purpose, it's public, feel free to email me! - TTtie 2019
 git config --global user.email \
     "whatdidyouthinkiwontleakmyprivate@email.cz" \
