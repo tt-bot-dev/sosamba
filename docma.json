@@ -24,7 +24,8 @@
     "markdown": {
         "gfm": true,
         "tables": true,
-        "emoji": true
+        "emoji": true,
+        "pedantic": true
     },
     "template": {
         "options": {
