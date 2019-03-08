@@ -6,6 +6,10 @@ const ArgumentParser = require("./lib/structures/ArgumentParser");
 const SimpleArgumentParser = require("./lib/argParsers/SimpleArgumentParser");
 const SwitchArgumentParser = require("./lib/argParsers/SwitchArgumentParser");
 const ParsingError = require("./lib/argParsers/ParsingError");
+const Constants = require("./lib/Constants");
+const ReactionMenu = require("./lib/structures/ReactionMenu");
+const GlobalUser = require("./lib/structures/GlobalUser");
+const { constructQuery } = require("./lib/argParsers/switchSerializers/erisObjects");
 module.exports = {
     Client,
     Event,
@@ -14,5 +18,9 @@ module.exports = {
     ArgumentParser,
     SimpleArgumentParser,
     SwitchArgumentParser,
-    ParsingError
+    ParsingError,
+    Constants,
+    ReactionMenu,
+    GlobalUser,
+    constructQuery
 };
