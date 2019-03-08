@@ -19,5 +19,8 @@
     "serve-docs": "docma serve",
     "build-docs": "node generateDocs",
     "test": "eslint ."
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
