@@ -1,7 +1,8 @@
 import { runInContext } from "vm";
 
 declare module "sosamba" {
-    import { Client as ErisClient,
+    import {
+        Client as ErisClient,
         Collection,
         ClientOptions,
         Message,
@@ -9,8 +10,7 @@ declare module "sosamba" {
         TextChannel,
         User,
         Member,
-        
-        
+        AnyGuildChannel
     } from "eris";
     import { Writable } from "stream";
 
@@ -25,6 +25,9 @@ declare module "sosamba" {
         public log: Logger;
         public commands: Collection<Command>;
         public events: Collection<Event>;
+        public reactionMenus: Collection<ReactionMenu>;
+        public getPrefix(msg: Message): string | string[];
+        public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean
     }
     class SosambaBase {
         public constructor(sosamba: Client, fileName?: string, filePath?: string);
@@ -39,7 +42,7 @@ declare module "sosamba" {
     }
 
     export class Event extends SosambaBase {
-        public constructor(sosamba: Client, fileName: string, filePath: string, options: {once: boolean, name: string});
+        public constructor(sosamba: Client, fileName: string, filePath: string, options: { once: boolean, name: string });
         public prerequisites(...args: any[]): boolean;
         public run(...args: any[]): any;
     }
@@ -47,15 +50,19 @@ declare module "sosamba" {
     export class Command extends SosambaBase {
         public constructor(sosamba: Client, fileName: string, filePath: string, options: {
             name: string,
-            args: string,
-            argParser: ArgumentParser
+            args?: string,
+            argParser?: ArgumentParser
         })
+        public name: string;
+        public args: string?;
+        public argParser: ArgumentParser?;
         public run(ctx, args: any): void
     }
 
     export class ArgumentParser {
         public constructor(client: Client);
-        parse(content: string, ctx: any): any
+        public sosamba: Client;
+        parse(content: string, ctx: any): any;
     }
 
     export class Context {
@@ -66,15 +73,18 @@ declare module "sosamba" {
         public author: User;
         public member: Member;
         public message: Message;
+        public msg: Message;
         async send(content: MessageContent, file?: MessageFile): Promise<Message>;
         async registerReactionMenu(menu: ReactionMenu): Promise<void>;
     }
     export class Logger extends console.Console {
-        constructor(options: { stdout ?: Writable[], stderr ?: Writable[], ignoreErrors: boolean, level: string[], name: string[] })
+        constructor(options: { stdout?: Writable[], stderr?: Writable[], ignoreErrors: boolean, level: string[], name: string[] })
     }
 
-    export function constructQuery<T>(ctx: Context, collection: Collection<T>|T[], predicate: (query: string) => (item: T) => boolean, itemName: string, displayAs?: (item: T) => string): T;
-    export class GlobalUser extends User {}
+    export function constructQuery<T>(ctx: Context, collection: Collection<T> | T[], predicate: (query: string) => (item: T) => boolean, itemName: string, displayAs?: (item: T) => string): T;
+    export class GlobalUser extends User {
+        static [Symbol.hasInstance](user: any): boolean;
+    }
     export class ReactionMenu {
         public constructor(ctx: Context, msg: Message);
         public sosamba: Client;
@@ -92,18 +102,48 @@ declare module "sosamba" {
         public async stopCallback(reason: StopReason): Promise<void>;
     }
 
+    interface SimpleArgumentParserOptions {
+        public filterEmptyArguments?: boolean;
+        public allowQuotedString?: boolean;
+        public separator?: string;
+    }
+
+    interface ArgumentOptions {
+        type: any,
+        default?: ((ctx: Context) => any) | any;
+        name?: string;
+        rest?: boolean;
+    }
+
+
+    interface SerializedArgumentParserOptions {
+        public args: ArgumentOptions[];
+    }
+
+    export class SerializedArgumentParser extends SimpleArgumentParser {
+        public constructor(sosamba: Client, options: SerializedArgumentParserOptions & SimpleArgumentParserOptions);
+        public parse(content: string, ctx: Context): any[];
+    }
     export class SimpleArgumentParser extends ArgumentParser {
+        public constructor(sosamba: Client, options: SimpleArgumentParserOptions);
         public parse(content: string): string[];
     }
 
     export class SwitchArgumentParser extends SimpleArgumentParser {
         public constructor(sosamba: Client, args: {
-            [key: string]: {
-                type: any,
-                default: ((ctx: Context) => any) | any;
-            }
+            [key: string]: ArgumentOptions
         })
         // Help users to convert it to their struct
         public async parse<T>(content: string, ctx: Context): T;
+    }
+
+    interface Extensible {
+        Context: typeof Context;
+    }
+    export class Structures {
+        public static get<T extends keyof Extensible>(structure: T): Extensible[T];
+        public static get(structure: string): Function;
+        public static extend<T extends keyof Extensible, N extends Extensible[T]>(structure: string, extender: (cls: Extensible[T]) => N): void;
+        public static extends<T extends Function>(structure: string, extender: (cls: typeof Function) => T): void;
     }
 }

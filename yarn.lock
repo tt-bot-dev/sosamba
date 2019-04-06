@@ -2198,7 +2198,7 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-nan@^2.1.0, nan@^2.8.0, nan@^2.9.2:
+nan@^2.1.0, nan@^2.9.2:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
   integrity sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
@@ -3561,10 +3561,3 @@ yargs@^12.0.5:
     which-module "^2.0.0"
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
-
-zlib-sync@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/zlib-sync/-/zlib-sync-0.1.4.tgz#510db6ea89040d4ff6fa22cd3936f5c1a2ad0987"
-  integrity sha512-DRy+RONKzy/J6skNmq8ZBXtVAIoB4qbun+FCChlSlEvF7s9LJ0wzUXjVwl4tQ/jYT8V+LPzCg/sTcRj4E0g0fQ==
-  dependencies:
-    nan "^2.8.0"

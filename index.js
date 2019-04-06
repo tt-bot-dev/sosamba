@@ -5,6 +5,7 @@ const Command = require("./lib/structures/Command");
 const ArgumentParser = require("./lib/structures/ArgumentParser");
 const SimpleArgumentParser = require("./lib/argParsers/SimpleArgumentParser");
 const SwitchArgumentParser = require("./lib/argParsers/SwitchArgumentParser");
+const SerializedArgumentParser = require("./lib/argParsers/SerializedArgumentParser");
 const ParsingError = require("./lib/argParsers/ParsingError");
 const Constants = require("./lib/Constants");
 const ReactionMenu = require("./lib/structures/ReactionMenu");
@@ -22,6 +23,7 @@ module.exports = {
     ArgumentParser,
     SimpleArgumentParser,
     SwitchArgumentParser,
+    SerializedArgumentParser,
     ParsingError,
     Constants,
     ReactionMenu,

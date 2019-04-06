@@ -1,8 +1,11 @@
 # Sosamba [![Build status][azp badge]][azp]
 A Discord framework based on Eris library, currently in an alpha stage.
 
+## Projects using Sosamba
+[Just look at them](https://github.com/topics/sosamba). To add your own, simply add the `sosamba` topic to your repository!
+
 ## How to use Sosamba
-You can look at the documentation [here][docs], or look at a bundled (currently incomplete) example at the [example/](example/) folder.
+You can look at the documentation [here][docs], or look at a bundled (currently incomplete) example at the [example/](https://github.com/tt-bot-dev/sosamba/tree/master/example) folder.
 
 ## What does Sosamba aim to do?
 Many things. Most of them are tt.bot's features, however improved in order to be efficient. (for example, we currently register an event listener in some commands, which may lead to memory leak issues). The main one though, is to use as least production dependencies as possible.

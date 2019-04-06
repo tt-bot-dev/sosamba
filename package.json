@@ -1,6 +1,6 @@
 {
   "name": "sosamba",
-  "version": "0.0.3-iter4",
+  "version": "0.0.4",
   "description": "A Discord framework based on Eris library.",
   "main": "index.js",
   "repository": "https://github.com/tt-bot-dev/sosamba",
@@ -24,7 +24,6 @@
     "node": ">=10.0.0"
   },
   "optionalDependencies": {
-    "erlpack": "github:discordapp/erlpack",
-    "zlib-sync": "^0.1.4"
+    "erlpack": "github:discordapp/erlpack"
   }
 }
