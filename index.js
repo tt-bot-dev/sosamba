@@ -1,3 +1,4 @@
+"use strict";
 const Client = require("./lib/Client");
 const Event = require("./lib/structures/Event");
 const Logger = require("./lib/util/Logger");
@@ -12,6 +13,7 @@ const ReactionMenu = require("./lib/structures/ReactionMenu");
 const GlobalUser = require("./lib/structures/GlobalUser");
 const { constructQuery } = require("./lib/argParsers/switchSerializers/erisObjects");
 const Structures = require("./lib/Structures");
+const MessageListener = require("./lib/structures/MessageListener");
 /**
  * A framework that simply doesn't сoсать anyone
  * @module Sosamba
@@ -30,5 +32,6 @@ module.exports = {
     ReactionMenu,
     GlobalUser,
     constructQuery,
-    Structures
+    Structures,
+    MessageListener
 };

@@ -10,14 +10,24 @@ declare module "sosamba" {
         TextChannel,
         User,
         Member,
-        AnyGuildChannel
+        AnyGuildChannel,
+        MessageContent,
+        MessageFile
     } from "eris";
     import { Writable } from "stream";
-
     type StopReason = 0 | 1 | 2 | 3;
+    type Prefix = string | string[];
+    type Asyncable<T> = T | Promise<T>;
+    type PrefixFunc = (msg: Message, client?: Client) => Asyncable<Prefix>;
+    interface LogOptions {
+        stdout?: Writable[]
+        stderr?: Writable[],
+        level?: string[]
+    }
     export class Client extends ErisClient {
-        constructor(token: string, options: ClientOptions & {
-            log: LogOptions
+        constructor(token: string, options?: ClientOptions & {
+            log: LogOptions,
+            prefix: Prefix | PrefixFunc;
         });
 
         public loadCommands(path?: string);
@@ -26,8 +36,33 @@ declare module "sosamba" {
         public commands: Collection<Command>;
         public events: Collection<Event>;
         public reactionMenus: Collection<ReactionMenu>;
-        public getPrefix(msg: Message): string | string[];
-        public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean
+        public getPrefix(msg: Message): Prefix;
+        public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean;
+        public messageListeners: Collection<MessageListener>;
+        public messageAwaiter: MessageAwaiter;
+    }
+
+    export class MessageListener {
+        public constructor(sosamba: Client, name?: string);
+        public sosamba: Client;
+        public name: string;
+        public id: string;
+        public prerequisites(ctx: Context): Asyncable<boolean>;
+        public run(ctx: Context): Asyncable<void>;
+    }
+
+    type MessageListenerFilter = (ctx: Context) => Asyncable<boolean>;
+    class MessageAwaiter extends MessageListener {
+        public listeners: Map<string, {
+            filter: MessageListenerFilter;
+            rs<T>(obj: T): Promise<T>;
+            timeout: NodeJS.Timeout;
+        }>;
+        public waitForMessage(ctx: Context, filter?: MessageListenerFilter, timeout?: number): Promise<Context>;
+        public askYesNo(ctx: Context, returnMessage?: boolean): Promise<boolean|{
+            response: boolean;
+            context: Context;
+        }>;
     }
     class SosambaBase {
         public constructor(sosamba: Client, fileName?: string, filePath?: string);
@@ -43,8 +78,8 @@ declare module "sosamba" {
 
     export class Event extends SosambaBase {
         public constructor(sosamba: Client, fileName: string, filePath: string, options: { once: boolean, name: string });
-        public prerequisites(...args: any[]): boolean;
-        public run(...args: any[]): any;
+        public prerequisites(...args: any[]): Asyncable<boolean>;
+        public run(...args: any[]): Asyncble<void>;
     }
 
     export class Command extends SosambaBase {
@@ -54,15 +89,15 @@ declare module "sosamba" {
             argParser?: ArgumentParser
         })
         public name: string;
-        public args: string?;
-        public argParser: ArgumentParser?;
-        public run(ctx, args: any): void
+        public args?: string;
+        public argParser?: ArgumentParser;
+        public run(ctx, args: any): Asyncable<void>;
     }
 
     export class ArgumentParser {
         public constructor(client: Client);
         public sosamba: Client;
-        parse(content: string, ctx: any): any;
+        parse(content: string, ctx?: Context): any;
     }
 
     export class Context {
@@ -74,14 +109,19 @@ declare module "sosamba" {
         public member: Member;
         public message: Message;
         public msg: Message;
-        async send(content: MessageContent, file?: MessageFile): Promise<Message>;
-        async registerReactionMenu(menu: ReactionMenu): Promise<void>;
+        public send(content: MessageContent, file?: MessageFile): Promise<Message>;
+        public registerReactionMenu(menu: ReactionMenu): Promise<void>;
+        public waitForMessage(filter?: MessageListenerFilter, timeout?: number): Promise<Context>;
+        public askYesNo(returnMessage?: boolean): Promise<boolean|{
+            response: boolean;
+            context: Context;
+        }>;
     }
     export class Logger extends console.Console {
         constructor(options: { stdout?: Writable[], stderr?: Writable[], ignoreErrors: boolean, level: string[], name: string[] })
     }
 
-    export function constructQuery<T>(ctx: Context, collection: Collection<T> | T[], predicate: (query: string) => (item: T) => boolean, itemName: string, displayAs?: (item: T) => string): T;
+    export function constructQuery<T extends { id: string | number }>(ctx: Context, collection: Collection<T> | T[], predicate: (query: string) => (item: T) => boolean, itemName: string, displayAs?: (item: T) => string): T;
     export class GlobalUser extends User {
         static [Symbol.hasInstance](user: any): boolean;
     }
@@ -90,22 +130,22 @@ declare module "sosamba" {
         public sosamba: Client;
         public user: string;
         public callbacks: {
-            [key: string]: (menu: ReactionMenu) => void | Promise<void>;
+            [key: string]: (menu: ReactionMenu) => Asyncable<void>;
         };
         public ctx: Context;
         public context: Context;
         public message: Message;
         public id: string;
         public timeout: number | boolean;
-        public async canRunCallback(emoji: string): Promise<boolean>;
-        public async prepareEmoji(): Promise<void>;
-        public async stopCallback(reason: StopReason): Promise<void>;
+        public canRunCallback(emoji: string): Asyncable<boolean>;
+        public prepareEmoji(): Asyncable<void>;
+        public stopCallback(reason: StopReason): Asyncable<void>;
     }
 
     interface SimpleArgumentParserOptions {
-        public filterEmptyArguments?: boolean;
-        public allowQuotedString?: boolean;
-        public separator?: string;
+        filterEmptyArguments?: boolean;
+        allowQuotedString?: boolean;
+        separator?: string;
     }
 
     interface ArgumentOptions {
@@ -117,7 +157,7 @@ declare module "sosamba" {
 
 
     interface SerializedArgumentParserOptions {
-        public args: ArgumentOptions[];
+        args: ArgumentOptions[];
     }
 
     export class SerializedArgumentParser extends SimpleArgumentParser {
@@ -126,15 +166,15 @@ declare module "sosamba" {
     }
     export class SimpleArgumentParser extends ArgumentParser {
         public constructor(sosamba: Client, options: SimpleArgumentParserOptions);
-        public parse(content: string): string[];
+        public parse(content: string, ctx: Context): string[];
     }
 
-    export class SwitchArgumentParser extends SimpleArgumentParser {
+    export class SwitchArgumentParser extends SerializedArgumentParser {
         public constructor(sosamba: Client, args: {
             [key: string]: ArgumentOptions
         })
         // Help users to convert it to their struct
-        public async parse<T>(content: string, ctx: Context): T;
+        public parse(content: string, ctx: Context): any[];
     }
 
     interface Extensible {
