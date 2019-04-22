@@ -1,5 +1,3 @@
-import { runInContext } from "vm";
-
 declare module "sosamba" {
     import {
         Client as ErisClient,
@@ -36,7 +34,7 @@ declare module "sosamba" {
         public commands: Collection<Command>;
         public events: Collection<Event>;
         public reactionMenus: Collection<ReactionMenu>;
-        public getPrefix(msg: Message): Prefix;
+        public getPrefix(msg: Message): Promise<Prefix>;
         public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean;
         public messageListeners: Collection<MessageListener>;
         public messageAwaiter: MessageAwaiter;
@@ -79,7 +77,12 @@ declare module "sosamba" {
     export class Event extends SosambaBase {
         public constructor(sosamba: Client, fileName: string, filePath: string, options: { once: boolean, name: string });
         public prerequisites(...args: any[]): Asyncable<boolean>;
-        public run(...args: any[]): Asyncble<void>;
+        public run(...args: any[]): Asyncable<void>;
+    }
+
+    export class ParsingError extends Error {
+        public constructor(message: string, ignore?: boolean);
+        public ignore: boolean;
     }
 
     export class Command extends SosambaBase {
@@ -91,7 +94,7 @@ declare module "sosamba" {
         public name: string;
         public args?: string;
         public argParser?: ArgumentParser;
-        public run(ctx, args: any): Asyncable<void>;
+        public run(ctx: Context, args: any): Asyncable<void>;
     }
 
     export class ArgumentParser {

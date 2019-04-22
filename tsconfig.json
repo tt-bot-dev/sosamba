@@ -1,0 +1,13 @@
+// Taken and modified from https://github.com/abalabahaha/eris/blob/dev/tsconfig.json
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "strict": true,
+      "alwaysStrict": true,
+      "moduleResolution": "node",
+      "lib": ["es6"],
+      "types": ["node"]
+    },
+    "files": ["index.d.ts"]
+  }

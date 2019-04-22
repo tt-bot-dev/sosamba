@@ -24,6 +24,7 @@
     "node": ">=10.0.0"
   },
   "optionalDependencies": {
+    "@types/node": "^11.13.5",
     "erlpack": "github:discordapp/erlpack"
   }
 }
