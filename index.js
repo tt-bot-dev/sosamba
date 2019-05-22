@@ -23,9 +23,24 @@ const {Member, User, Guild, GuildChannel} = require("eris");
  */
 const Serializers = {
     GlobalUser,
+    /**
+     * Re-exported Eris symbol
+     */
     Member,
+    
+    /**
+     * Re-exported Eris symbol
+     */
     User,
+    
+    /**
+     * Re-exported Eris symbol
+     */
     Guild,
+    
+    /**
+     * Re-exported Eris symbol
+     */
     GuildChannel
 };
 
