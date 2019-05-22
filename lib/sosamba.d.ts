@@ -10,7 +10,8 @@ declare module "sosamba" {
         Member,
         AnyGuildChannel,
         MessageContent,
-        MessageFile
+        MessageFile,
+        GuildChannel
     } from "eris";
     import { Writable } from "stream";
     type StopReason = 0 | 1 | 2 | 3;
@@ -22,14 +23,22 @@ declare module "sosamba" {
         stderr?: Writable[],
         level?: string[]
     }
+
+    export interface Serializers {
+        GlobalUser: typeof GlobalUser;
+        Member: typeof Member;
+        User: typeof User;
+        Guild: typeof Guild;
+        GuildChannel: typeof GuildChannel;
+    }
     export class Client extends ErisClient {
         constructor(token: string, options?: ClientOptions & {
             log: LogOptions,
             prefix: Prefix | PrefixFunc;
         });
 
-        public loadCommands(path?: string);
-        public loadEvents(path?: string);
+        public loadCommands(path?: string): Promise<void>;
+        public loadEvents(path?: string): Promise<void>;
         public log: Logger;
         public commands: Collection<Command>;
         public events: Collection<Event>;
