@@ -1,3 +1,4 @@
+"use strict";
 const {Client} = require("../index");
 const { createWriteStream } = require("fs");
 const bot = new Client("TOKEN", {
