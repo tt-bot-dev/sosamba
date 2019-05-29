@@ -24,12 +24,12 @@ declare module "sosamba" {
         level?: string[]
     }
 
-    export interface Serializers {
-        GlobalUser: typeof GlobalUser;
-        Member: typeof Member;
-        User: typeof User;
-        Guild: typeof Guild;
-        GuildChannel: typeof GuildChannel;
+    export class Serializers {
+        static GlobalUser: typeof GlobalUser;
+        static Member: typeof Member;
+        static User: typeof User;
+        static Guild: typeof Guild;
+        static GuildChannel: typeof GuildChannel;
     }
     export class Client extends ErisClient {
         constructor(token: string, options?: ClientOptions & {
