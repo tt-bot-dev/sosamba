@@ -5,10 +5,10 @@ A Discord framework based on Eris library, currently in an alpha stage.
 [Just look at them](https://github.com/topics/sosamba). To add your own, simply add the `sosamba` topic to your repository!
 
 ## How to use Sosamba
-You can look at the documentation [here][docs], or look at a bundled (currently incomplete) example at the [example/](https://github.com/tt-bot-dev/sosamba/tree/master/example) folder.
+You can look at the documentation [here][docs], or look at [tt.bot](https://github.com/tt-bot-dev/tt.bot) (currently on the `v4-wip` branch).
 
 ## What does Sosamba aim to do?
-Many things. Most of them are tt.bot's features, however improved in order to be efficient. (for example, we currently register an event listener in some commands, which may lead to memory leak issues). The main one though, is to use as least production dependencies as possible.
+Many things. Most of them are tt.bot's features, however improved in order to be efficient. The main one though, is to use as least production dependencies as possible.
 
 Currently, you can do these things:
 
@@ -18,9 +18,6 @@ Currently, you can do these things:
 - Custom argument parsers to suit your needs
 
 There will be likely more features included than that, though.
-
-## Why this name?
-И пoчему нет? (Why not?)
 
 ## Prerequisites
 - [Node.js], v10 and higher. We already use some advanced features that Node v8 does not support.

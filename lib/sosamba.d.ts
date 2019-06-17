@@ -17,7 +17,7 @@ declare module "sosamba" {
     type StopReason = 0 | 1 | 2 | 3;
     type Prefix = string | string[];
     type Asyncable<T> = T | Promise<T>;
-    type PrefixFunc = (msg: Message, client?: Client) => Asyncable<Prefix>;
+    type PrefixFunc = (ctx: Context, client?: Client) => Asyncable<Prefix>;
     interface LogOptions {
         stdout?: Writable[]
         stderr?: Writable[],
@@ -43,7 +43,7 @@ declare module "sosamba" {
         public commands: Collection<Command>;
         public events: Collection<Event>;
         public reactionMenus: Collection<ReactionMenu>;
-        public getPrefix(msg: Message): Promise<Prefix>;
+        public getPrefix(ctx: Context): Promise<Prefix>;
         public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean;
         public messageListeners: Collection<MessageListener>;
         public messageAwaiter: MessageAwaiter;
@@ -110,6 +110,7 @@ declare module "sosamba" {
         public constructor(client: Client);
         public sosamba: Client;
         parse(content: string, ctx?: Context): any;
+        provideUsageString(detailed?: boolean): string;
     }
 
     export class Context {
