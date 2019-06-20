@@ -98,11 +98,13 @@ declare module "sosamba" {
         public constructor(sosamba: Client, fileName: string, filePath: string, options: {
             name: string,
             args?: string,
-            argParser?: ArgumentParser
+            argParser?: ArgumentParser,
+            description?: string
         })
         public name: string;
         public args?: string;
         public argParser?: ArgumentParser;
+        public description?: string;
         public run(ctx: Context, args: any): Asyncable<void>;
     }
 
@@ -166,6 +168,7 @@ declare module "sosamba" {
         default?: ((ctx: Context) => any) | any;
         name?: string;
         rest?: boolean;
+        description?: string;
     }
 
 
@@ -176,6 +179,7 @@ declare module "sosamba" {
     export class SerializedArgumentParser extends SimpleArgumentParser {
         public constructor(sosamba: Client, options: SerializedArgumentParserOptions & SimpleArgumentParserOptions);
         public parse(content: string, ctx: Context): any[];
+        public static None: symbol;
     }
     export class SimpleArgumentParser extends ArgumentParser {
         public constructor(sosamba: Client, options: SimpleArgumentParserOptions);
