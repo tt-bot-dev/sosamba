@@ -24,6 +24,7 @@ declare module "sosamba" {
         level?: string[]
     }
 
+    var Eris: typeof import("eris")
     export class Serializers {
         static GlobalUser: typeof GlobalUser;
         static Member: typeof Member;
