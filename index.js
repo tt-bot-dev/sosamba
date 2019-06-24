@@ -14,7 +14,8 @@ const GlobalUser = require("./lib/structures/serializer/GlobalUser");
 const { constructQuery } = require("./lib/argParsers/switchSerializers/erisObjects");
 const Structures = require("./lib/Structures");
 const MessageListener = require("./lib/structures/MessageListener");
-const {Member, User, Guild, GuildChannel} = require("eris");
+const Eris = require("eris");
+const {Member, User, Guild, GuildChannel} = Eris;
 
 /**
  * An object containing all the serializable classes.
@@ -63,5 +64,10 @@ module.exports = {
     Serializers,
     constructQuery,
     Structures,
-    MessageListener
+    MessageListener,
+
+    /**
+     * Re-exported Eris library for instanceof checks :eyes:
+     */
+    Eris,
 };
