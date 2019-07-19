@@ -46,4 +46,4 @@ steps:
     TRAVIS_BRANCH: $(Build.SourceBranchName)
     TRAVIS_REPO_SLUG: tt-bot-dev/sosamba
     GIT_ACCESS_TOKEN: $(git.accessToken)
-    
+  condition: eq(variables['System.PullRequest.IsFork'], 'False')
