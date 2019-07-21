@@ -32,6 +32,13 @@ declare module "sosamba" {
         static Guild: typeof Guild;
         static GuildChannel: typeof GuildChannel;
     }
+
+    class I18N {
+        constructor(bot: Client);
+        public addLanguages(path: string): Promise<void>
+        public getTranslation(term: string, lang: string, ...args: any): Promise<string>;
+    }
+
     export class Client extends ErisClient {
         constructor(token: string, options?: ClientOptions & {
             log: LogOptions,
@@ -100,12 +107,14 @@ declare module "sosamba" {
             name: string,
             args?: string,
             argParser?: ArgumentParser,
-            description?: string
+            description?: string,
+            displayInHelp?: boolean
         })
         public name: string;
         public args?: string;
         public argParser?: ArgumentParser;
         public description?: string;
+        public displayInHelp: boolean;
         public run(ctx: Context, args: any): Asyncable<void>;
     }
 
