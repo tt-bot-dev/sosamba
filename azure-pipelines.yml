@@ -19,12 +19,6 @@ steps:
     npm install
   displayName: 'Install the packages'
 
-- script: |
-    echo "$(Build.RequestedFor)"
-    echo "$(Build.RequestedForId)"
-    echo "$(Build.RequestedForEmail)"
-  displayName: "Whomst've made the commit"
-
 - task: Bash@3
   inputs:
     targetType: filePath
