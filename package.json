@@ -24,6 +24,6 @@
     "node": ">=10.0.0"
   },
   "optionalDependencies": {
-    "@types/node": "^12.0.4"
+    "@types/node": "^12.11.5"
   }
 }
