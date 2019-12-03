@@ -18,37 +18,15 @@ const MessageListener = require("./lib/structures/MessageListener");
 const Eris = require("eris");
 const {Member, User, Guild, GuildChannel} = Eris;
 
-/**
- * An object containing all the serializable classes.
- * Some symbols are re-exported from Eris.
- */
 const Serializers = {
     GlobalUser,
-    /**
-     * Re-exported Eris symbol
-     */
     Member,
-    
-    /**
-     * Re-exported Eris symbol
-     */
     User,
-    
-    /**
-     * Re-exported Eris symbol
-     */
     Guild,
-    
-    /**
-     * Re-exported Eris symbol
-     */
     GuildChannel,
     Integer
 };
 
-/**
- * A framework that simply doesn't сoсать anyone
- */
 module.exports = {
     Client,
     Event,
@@ -65,9 +43,5 @@ module.exports = {
     constructQuery,
     Structures,
     MessageListener,
-
-    /**
-     * Re-exported Eris library for instanceof checks
-     */
     Eris,
 };
