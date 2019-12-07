@@ -37,15 +37,15 @@ declare module "sosamba" {
         public getTranslation(term: string, lang: string, ...args: any): Promise<string>;
     }
 
+    type SosambaClientOptions = ClientOptions & {
+        log: LogOptions;
+        prefix: Prefix | PrefixFunc;
+        provideCommand: (ctx: Context, command: string) => Asyncable<Command>;
+    };
+
     export class Client extends ErisClient {
-        constructor(token: string, options?: ClientOptions & {
-            log: LogOptions,
-            prefix: Prefix | PrefixFunc;
-        });
-        public options: ClientOptions & {
-            log: LogOptions,
-            prefix: Prefix | PrefixFunc;
-        };
+        constructor(token: string, options?: SosambaClientOptions);
+        public options: SosambaClientOptions;
 
         public loadCommands(path?: string): Promise<void>;
         public loadEvents(path?: string): Promise<void>;
@@ -57,6 +57,7 @@ declare module "sosamba" {
         public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean;
         public messageListeners: Collection<MessageListener>;
         public messageAwaiter: MessageAwaiter;
+        public i18n: I18N;
     }
 
     export class MessageListener {
