@@ -19,8 +19,6 @@ declare module "sosamba" {
     type Asyncable<T> = T | Promise<T>;
     type PrefixFunc = (ctx: Context, client?: Client) => Asyncable<Prefix>;
     interface LogOptions {
-        stdout?: Writable[]
-        stderr?: Writable[],
         level?: string[]
     }
 
@@ -44,6 +42,10 @@ declare module "sosamba" {
             log: LogOptions,
             prefix: Prefix | PrefixFunc;
         });
+        public options: ClientOptions & {
+            log: LogOptions,
+            prefix: Prefix | PrefixFunc;
+        };
 
         public loadCommands(path?: string): Promise<void>;
         public loadEvents(path?: string): Promise<void>;

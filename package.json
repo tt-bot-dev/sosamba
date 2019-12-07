@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "chalk": "^3.0.0",
     "eris": "github:abalabahaha/eris#dev"
   },
   "typings": "lib/sosamba.d.ts",
