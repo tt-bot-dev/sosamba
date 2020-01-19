@@ -111,13 +111,15 @@ declare module "sosamba" {
             args?: string,
             argParser?: ArgumentParser,
             description?: string,
-            displayInHelp?: boolean
+            displayInHelp?: boolean,
+            aliases?: string[];
         })
         public name: string;
         public args?: string;
         public argParser?: ArgumentParser;
         public description?: string;
         public displayInHelp: boolean;
+        public aliases: string[];
         public run(ctx: Context, args: any): Asyncable<void>;
     }
 
@@ -177,7 +179,7 @@ declare module "sosamba" {
     }
 
     interface ArgumentOptions {
-        type: any,
+        type: any | any[],
         default?: ((ctx: Context) => any) | any;
         name?: string;
         rest?: boolean;
