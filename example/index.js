@@ -1,3 +1,4 @@
+"use strict";
 const { Client, Command } = require("sosamba");
 
 const client = new Client("NeveR.goNnA_gIve.You_Up_NevEr_GonNa_LeT_You_dOwn", {

@@ -1,3 +1,4 @@
+"use strict";
 // An example event module using the Sosamba framework
 const { Event } = require("sosamba");
 

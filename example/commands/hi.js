@@ -1,3 +1,4 @@
+"use strict";
 // An example command module using the Sosamba framework
 const { Command, SerializedArgumentParser, 
     Eris: { Member } } = require("sosamba");
