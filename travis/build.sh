@@ -25,7 +25,7 @@ echo "Committing..."
 git commit -m "Run ESlint and build documentation for $CURRENT_COMMIT" >/dev/null 2>&1
 echo "Pushing.."
 
-git push https://$COMMIT_AUTHOR:$GIT_ACCESS_TOKEN@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH >/dev/null 2>&1
+git push https://$COMMIT_AUTHOR:$GIT_ACCESS_TOKEN@github.com/$CURRENT_REPO HEAD:$CURRENT_BRANCH >/dev/null 2>&1
 
 echo "Successfully built and pushed the documentation"
 
