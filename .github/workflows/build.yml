@@ -39,4 +39,4 @@ jobs:
         GIT_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CI: true
         CURRENT_REPO: ${{ github.repository }}
-      if: github.event_name != 'pull_request'
+      if: github.event_name != 'pull_request' && github.actor != 'tt-bot' && github.actor != 'github-actions'
