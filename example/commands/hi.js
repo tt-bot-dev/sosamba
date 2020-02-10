@@ -16,7 +16,7 @@ class HiCommand extends Command {
                     description: "Who to say hi to"
                 }]
             })
-        })
+        });
     }
 
     // The arguments get passed from the SerializedArgumentParser

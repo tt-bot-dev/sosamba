@@ -24,7 +24,7 @@ class TestingCommand extends Command {
         super(client, undefined, undefined, {
             name: "hello",
             description: "Says \"hello\"."
-        })
+        });
     }
 
     async run(ctx) {
