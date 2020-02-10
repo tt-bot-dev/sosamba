@@ -30,6 +30,7 @@ jobs:
       env:
         CI: true
       if: github.actor != 'tt-bot' && github.actor != 'github-actions'
+      continue-on-error: true
     - name: Build documentation
       run: ./travis/build.sh
       env:
