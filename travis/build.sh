@@ -11,7 +11,7 @@ echo "Running ESLint..."
 npm test -- --fix
 
 echo "Generating documentation..."
-typedoc
+npx typedoc
 
 git config --global user.name "tt-bot" >/dev/null 2>&1
 git config --global user.email \
