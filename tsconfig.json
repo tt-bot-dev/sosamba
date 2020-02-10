@@ -9,5 +9,15 @@
       "lib": ["es6"],
       "types": ["node"]
     },
-    "files": ["lib/sosamba.d.ts"]
+    "files": ["lib/sosamba.d.ts"],
+    "typedocOptions": {
+      "includeDeclarations": true,
+      "excludeExternals": true,
+      "readme": "README.md",
+      "out": "docs/",
+      "inputFiles": ["lib/sosamba.d.ts"],
+      "mode": "file",
+      "entryPoint": "\"sosamba\"",
+      "name": "Sosamba"
+    }
   }

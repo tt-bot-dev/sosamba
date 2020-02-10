@@ -1,4 +1,7 @@
-# Sosamba<br>[![Build status][azp badge]][azp]
+# Sosamba
+[![Build status][azp badge]][azp]
+<hr>
+
 A Discord framework that uses [Eris] to power tt.bot v4, usable in other projects as well.
 
 ## Installation
