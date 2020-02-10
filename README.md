@@ -2,7 +2,7 @@
 [![Build status][azp badge]][azp]
 <hr>
 
-A Discord framework that uses [Eris] to power tt.bot v4, usable in other projects as well.
+An OOP-based framework based on [Eris]. An example bot is provided [here](https://github.com/tt-bot-dev/sosamba/tree/master/example)
 
 ## Installation
 Currently this framework is available only from GitHub.  
@@ -16,7 +16,7 @@ yarn add github:tt-bot-dev/sosamba
 ```
 
 ## Projects using Sosamba
-Take a look at the [`sosamba` topic](https://github.com/topics/sosamba). To add your own, simply add that topic to your repository.
+Check out the [`sosamba` GitHub topic](https://github.com/topics/sosamba).
 
 ## How to use Sosamba
 You can look at the documentation [here][docs], or look at [tt.bot](https://github.com/tt-bot-dev/tt.bot) (currently on the `v4-wip` branch).

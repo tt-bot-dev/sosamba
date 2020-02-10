@@ -115,17 +115,20 @@ declare module "sosamba" {
         /**
          * Logging options
          */
-        log: LogOptions;
+        log?: LogOptions;
         /**
          * The command prefix
          */
         prefix: Prefix | PrefixFunc;
         /**
          * Provide a command in case it cannot be found
+         */
+        provideCommand?: 
+        /**
          * @param ctx The context
          * @param command The command name
          */
-        provideCommand(ctx: Context, command: string): Asyncable<Command>;
+        (ctx: Context, command: string) => Asyncable<Command>;
     }
 
     /**
@@ -142,6 +145,12 @@ declare module "sosamba" {
          * The client options
          */
         public options: SosambaClientOptions;
+
+        /**
+         * Connects to Discord's gateway
+         * @param loadCommandsAndEvents Whether to load any commands/events or not (including Sosamba's internal ones)
+         */
+        public connect(loadCommandsAndEvents?: boolean): Promise<void>;
 
         /**
          * Loads the commands
