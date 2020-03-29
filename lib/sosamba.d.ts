@@ -653,6 +653,10 @@ declare module "sosamba" {
          * - Native JS types: String, Number, BigInt, Boolean
          * - Eris types: User, Member, Guild, GuildChannel, Role
          * - Sosamba types: [[GlobalUser]], [[Integer]]
+         * - a function accepting two parameters and returning [[Asyncable]]<any>:
+         * ```ts
+         * (val: string, ctx: Context) => Asyncable<any>
+         * ```
          * 
          * When an array is used, the parser will try to parse the first type and continue looking through other types if it fails.
          */
@@ -669,6 +673,10 @@ declare module "sosamba" {
          * Whether the argument applies to the rest of the string. The argument must be last. [[SerializedArgumentParser]] only
          */
         rest?: boolean;
+        /**
+         * Whether the argument applies to the rest of the string, however, the string will be split by the separator into multiple elements. The argument must be last. [[SerializedArgumentParser]] only
+         */
+        restSplit?: boolean;
         /**
          * Description of the argument
          */
