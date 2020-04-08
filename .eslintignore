@@ -2,3 +2,4 @@
 test/
 # Disable linting of documentation
 docs/
+example/node_modules/
