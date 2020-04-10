@@ -1,6 +1,6 @@
 {
   "name": "sosamba",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A Discord framework based on Eris library.",
   "main": "index.js",
   "repository": "https://github.com/tt-bot-dev/sosamba",
