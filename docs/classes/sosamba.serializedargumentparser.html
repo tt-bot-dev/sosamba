@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>I18N | Sosamba</title>
+	<title>SerializedArgumentParser | Sosamba</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -51,13 +51,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">&quot;sosamba&quot;</a>
+					<a href="../globals.html">Sosamba</a>
 				</li>
 				<li>
-					<a href="_sosamba_.i18n.html">I18N</a>
+					<a href="sosamba.serializedargumentparser.html">SerializedArgumentParser</a>
 				</li>
 			</ul>
-			<h1>Class I18N</h1>
+			<h1>Class SerializedArgumentParser</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Provides language strings to Sosamba</p>
+						<p>Like <a href="sosamba.simpleargumentparser.html">SimpleArgumentParser</a>, but serializes the data into the respective data types</p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,17 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">I18N</span>
+						<a href="sosamba.simpleargumentparser.html" class="tsd-signature-type">SimpleArgumentParser</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SerializedArgumentParser</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="sosamba.switchargumentparser.html" class="tsd-signature-type">SwitchArgumentParser</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -86,14 +96,21 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_sosamba_.i18n.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="sosamba.serializedargumentparser.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="sosamba.serializedargumentparser.html#sosamba" class="tsd-kind-icon">sosamba</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="sosamba.serializedargumentparser.html#none" class="tsd-kind-icon">None</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_sosamba_.i18n.html#addlanguages" class="tsd-kind-icon">add<wbr>Languages</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_sosamba_.i18n.html#gettranslation" class="tsd-kind-icon">get<wbr>Translation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="sosamba.serializedargumentparser.html#parse" class="tsd-kind-icon">parse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="sosamba.serializedargumentparser.html#provideusagestring" class="tsd-kind-icon">provide<wbr>Usage<wbr>String</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,113 +118,153 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>I18N<span class="tsd-signature-symbol">(</span>bot<span class="tsd-signature-symbol">: </span><a href="_sosamba_.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_sosamba_.i18n.html" class="tsd-signature-type">I18N</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Serialized<wbr>Argument<wbr>Parser<span class="tsd-signature-symbol">(</span>sosamba<span class="tsd-signature-symbol">: </span><a href="sosamba.client.html" class="tsd-signature-type">Client</a>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/sosamba.serializedargumentparseroptions.html" class="tsd-signature-type">SerializedArgumentParserOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/sosamba.simpleargumentparseroptions.html" class="tsd-signature-type">SimpleArgumentParserOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sosamba.serializedargumentparser.html" class="tsd-signature-type">SerializedArgumentParser</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="sosamba.simpleargumentparser.html">SimpleArgumentParser</a>.<a href="sosamba.simpleargumentparser.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/db917fc/lib/sosamba.d.ts#L91">lib/sosamba.d.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/0d4bc8f/lib/sosamba.d.ts#L704">lib/sosamba.d.ts:704</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Constructs the i18n instance</p>
+									<p>Constructs a serialized argument parser</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>bot: <a href="_sosamba_.client.html" class="tsd-signature-type">Client</a></h5>
+									<h5>sosamba: <a href="sosamba.client.html" class="tsd-signature-type">Client</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>The client</p>
 										</div>
 									</div>
 								</li>
+								<li>
+									<h5>options: <a href="../interfaces/sosamba.serializedargumentparseroptions.html" class="tsd-signature-type">SerializedArgumentParserOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/sosamba.simpleargumentparseroptions.html" class="tsd-signature-type">SimpleArgumentParserOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The options of the parser</p>
+										</div>
+									</div>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_sosamba_.i18n.html" class="tsd-signature-type">I18N</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="sosamba.serializedargumentparser.html" class="tsd-signature-type">SerializedArgumentParser</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="sosamba" class="tsd-anchor"></a>
+					<h3>sosamba</h3>
+					<div class="tsd-signature tsd-kind-icon">sosamba<span class="tsd-signature-symbol">:</span> <a href="sosamba.client.html" class="tsd-signature-type">Client</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="sosamba.argumentparser.html">ArgumentParser</a>.<a href="sosamba.argumentparser.html#sosamba">sosamba</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/0d4bc8f/lib/sosamba.d.ts#L452">lib/sosamba.d.ts:452</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The client</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="none" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> None</h3>
+					<div class="tsd-signature tsd-kind-icon">None<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/0d4bc8f/lib/sosamba.d.ts#L721">lib/sosamba.d.ts:721</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When used as a default value for an argument, the default will be <code>null</code></p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addlanguages" class="tsd-anchor"></a>
-					<h3>add<wbr>Languages</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Languages<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="parse" class="tsd-anchor"></a>
+					<h3>parse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ctx<span class="tsd-signature-symbol">: </span><a href="sosamba.context.html" class="tsd-signature-type">Context</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="sosamba.simpleargumentparser.html">SimpleArgumentParser</a>.<a href="sosamba.simpleargumentparser.html#parse">parse</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/db917fc/lib/sosamba.d.ts#L101">lib/sosamba.d.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/0d4bc8f/lib/sosamba.d.ts#L717">lib/sosamba.d.ts:717</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Adds languages</p>
+									<p>Parses the arguments and serializes them</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>path: <span class="tsd-signature-type">string</span></h5>
+									<h5>content: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Path to the language folder</p>
+										<p>The string to parse</p>
+									</div>
+								</li>
+								<li>
+									<h5>ctx: <a href="sosamba.context.html" class="tsd-signature-type">Context</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The context</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of serialized arguments</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="gettranslation" class="tsd-anchor"></a>
-					<h3>get<wbr>Translation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Translation<span class="tsd-signature-symbol">(</span>term<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, lang<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="provideusagestring" class="tsd-anchor"></a>
+					<h3>provide<wbr>Usage<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">provide<wbr>Usage<wbr>String<span class="tsd-signature-symbol">(</span>detailed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="sosamba.argumentparser.html">ArgumentParser</a>.<a href="sosamba.argumentparser.html#provideusagestring">provideUsageString</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/db917fc/lib/sosamba.d.ts#L108">lib/sosamba.d.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/0d4bc8f/lib/sosamba.d.ts#L464">lib/sosamba.d.ts:464</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets a translated string</p>
+									<p>Provides an usage string;</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>term: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> detailed: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The term name</p>
-									</div>
-								</li>
-								<li>
-									<h5>lang: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The language</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Additional parameters for the term</p>
+										<p>Whether the usage string should be detailed or not</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -217,104 +274,110 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="current tsd-kind-module">
-						<a href="../globals.html">&quot;sosamba&quot;</a>
+						<a href="../globals.html">Sosamba</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/_sosamba_.stopreason.html" class="tsd-kind-icon">Stop<wbr>Reason</a>
+						<a href="../enums/sosamba.stopreason.html" class="tsd-kind-icon">Stop<wbr>Reason</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.argumentparser.html" class="tsd-kind-icon">Argument<wbr>Parser</a>
+						<a href="sosamba.argumentparser.html" class="tsd-kind-icon">Argument<wbr>Parser</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.client.html" class="tsd-kind-icon">Client</a>
+						<a href="sosamba.client.html" class="tsd-kind-icon">Client</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.command.html" class="tsd-kind-icon">Command</a>
+						<a href="sosamba.command.html" class="tsd-kind-icon">Command</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.context.html" class="tsd-kind-icon">Context</a>
+						<a href="sosamba.context.html" class="tsd-kind-icon">Context</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.event.html" class="tsd-kind-icon">Event</a>
+						<a href="sosamba.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.globaluser.html" class="tsd-kind-icon">Global<wbr>User</a>
+						<a href="sosamba.globaluser.html" class="tsd-kind-icon">Global<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.i18n.html" class="tsd-kind-icon">I18N</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.integer.html" class="tsd-kind-icon">Integer</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.logger.html" class="tsd-kind-icon">Logger</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.messageawaiter.html" class="tsd-kind-icon">Message<wbr>Awaiter</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.messagelistener.html" class="tsd-kind-icon">Message<wbr>Listener</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.parsingerror.html" class="tsd-kind-icon">Parsing<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="sosamba.reactionmenu.html" class="tsd-kind-icon">Reaction<wbr>Menu</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.i18n.html" class="tsd-kind-icon">I18N</a>
+						<a href="sosamba.serializedargumentparser.html" class="tsd-kind-icon">Serialized<wbr>Argument<wbr>Parser</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_sosamba_.i18n.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="sosamba.serializedargumentparser.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_sosamba_.i18n.html#addlanguages" class="tsd-kind-icon">add<wbr>Languages</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="sosamba.serializedargumentparser.html#sosamba" class="tsd-kind-icon">sosamba</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_sosamba_.i18n.html#gettranslation" class="tsd-kind-icon">get<wbr>Translation</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="sosamba.serializedargumentparser.html#none" class="tsd-kind-icon">None</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="sosamba.serializedargumentparser.html#parse" class="tsd-kind-icon">parse</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="sosamba.serializedargumentparser.html#provideusagestring" class="tsd-kind-icon">provide<wbr>Usage<wbr>String</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.integer.html" class="tsd-kind-icon">Integer</a>
+						<a href="sosamba.serializers.html" class="tsd-kind-icon">Serializers</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.logger.html" class="tsd-kind-icon">Logger</a>
+						<a href="sosamba.simpleargumentparser.html" class="tsd-kind-icon">Simple<wbr>Argument<wbr>Parser</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.messageawaiter.html" class="tsd-kind-icon">Message<wbr>Awaiter</a>
+						<a href="sosamba.sosambabase.html" class="tsd-kind-icon">Sosamba<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.messagelistener.html" class="tsd-kind-icon">Message<wbr>Listener</a>
+						<a href="sosamba.structures.html" class="tsd-kind-icon">Structures</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.parsingerror.html" class="tsd-kind-icon">Parsing<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.reactionmenu.html" class="tsd-kind-icon">Reaction<wbr>Menu</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.serializedargumentparser.html" class="tsd-kind-icon">Serialized<wbr>Argument<wbr>Parser</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.serializers.html" class="tsd-kind-icon">Serializers</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.simpleargumentparser.html" class="tsd-kind-icon">Simple<wbr>Argument<wbr>Parser</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.sosambabase.html" class="tsd-kind-icon">Sosamba<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.structures.html" class="tsd-kind-icon">Structures</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_sosamba_.switchargumentparser.html" class="tsd-kind-icon">Switch<wbr>Argument<wbr>Parser</a>
+						<a href="sosamba.switchargumentparser.html" class="tsd-kind-icon">Switch<wbr>Argument<wbr>Parser</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_sosamba_.argumentoptions.html" class="tsd-kind-icon">Argument<wbr>Options</a>
+						<a href="../interfaces/sosamba.argumentoptions.html" class="tsd-kind-icon">Argument<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_sosamba_.extensible.html" class="tsd-kind-icon">Extensible</a>
+						<a href="../interfaces/sosamba.extensible.html" class="tsd-kind-icon">Extensible</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_sosamba_.logoptions.html" class="tsd-kind-icon">Log<wbr>Options</a>
+						<a href="../interfaces/sosamba.logoptions.html" class="tsd-kind-icon">Log<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_sosamba_.serializedargumentparseroptions.html" class="tsd-kind-icon">Serialized<wbr>Argument<wbr>Parser<wbr>Options</a>
+						<a href="../interfaces/sosamba.serializedargumentparseroptions.html" class="tsd-kind-icon">Serialized<wbr>Argument<wbr>Parser<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_sosamba_.simpleargumentparseroptions.html" class="tsd-kind-icon">Simple<wbr>Argument<wbr>Parser<wbr>Options</a>
+						<a href="../interfaces/sosamba.simpleargumentparseroptions.html" class="tsd-kind-icon">Simple<wbr>Argument<wbr>Parser<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_sosamba_.sosambaclientoptions.html" class="tsd-kind-icon">Sosamba<wbr>Client<wbr>Options</a>
+						<a href="../interfaces/sosamba.sosambaclientoptions.html" class="tsd-kind-icon">Sosamba<wbr>Client<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../globals.html#asyncable" class="tsd-kind-icon">Asyncable</a>
