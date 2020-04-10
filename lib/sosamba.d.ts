@@ -2,21 +2,21 @@
  * A Discord framework :)
  * @module
  */
-declare module "sosamba" {
-    import {
-        Client as ErisClient,
-        Collection,
-        ClientOptions,
-        Message,
-        Guild,
-        TextChannel,
-        User,
-        Member,
-        AnyGuildChannel,
-        MessageContent,
-        MessageFile,
-        GuildChannel
-    } from "eris";
+import {
+    Client as ErisClient,
+    Collection,
+    ClientOptions,
+    Message,
+    Guild,
+    TextChannel,
+    User,
+    Member,
+    AnyGuildChannel,
+    MessageContent,
+    MessageFile,
+    GuildChannel
+} from "eris";
+declare namespace Sosamba {
     /**
      * Reasons for stopping the reaction menu
      */
@@ -806,3 +806,5 @@ declare module "sosamba" {
         public static extend<T extends Function>(structure: string, extender: /** @param cls The extensible class */ (cls: typeof Function) => T): void;
     }
 }
+
+export = Sosamba;

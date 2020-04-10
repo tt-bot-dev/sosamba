@@ -24,15 +24,15 @@ jobs:
         CI: true
     - name: Set up the environment
       run:
-        chmod +x -R ./travis
+        chmod +x -R ./ci
     - name: Run the tests
-      run: ./travis/test.sh
+      run: ./ci/test.sh
       env:
         CI: true
       if: github.actor != 'tt-bot' && github.actor != 'github-actions'
       continue-on-error: true
     - name: Build documentation
-      run: ./travis/build.sh
+      run: ./ci/build.sh
       env:
         CURRENT_BRANCH: ${{ github.ref }}
         CURRENT_COMMIT: ${{ github.sha }}
