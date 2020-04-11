@@ -16,7 +16,7 @@ const { constructQuery } = require("./lib/argParsers/switchSerializers/erisObjec
 const Structures = require("./lib/Structures");
 const MessageListener = require("./lib/structures/MessageListener");
 const Eris = require("eris");
-const {Member, User, Guild, GuildChannel} = Eris;
+const { Member, User, Guild, GuildChannel } = Eris;
 
 const Serializers = {
     GlobalUser,

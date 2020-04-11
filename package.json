@@ -13,8 +13,8 @@
   },
   "typings": "lib/sosamba.d.ts",
   "devDependencies": {
-    "eslint": "^6.2.1",
-    "typedoc": "^0.16.9"
+    "eslint": "^6.8.0",
+    "typedoc": "^0.17.4"
   },
   "scripts": {
     "test": "eslint ."
