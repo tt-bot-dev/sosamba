@@ -1,12 +1,19 @@
 {
   "name": "sosamba",
   "version": "0.2.5",
-  "description": "A Discord framework based on Eris library.",
+  "description": "An OOP-based framework based on Eris.",
   "main": "index.js",
-  "repository": "https://github.com/tt-bot-dev/sosamba",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tt-bot-dev/sosamba.git"
+  },
   "author": "TTtie <me@tttie.cz>",
   "license": "MIT",
   "private": false,
+  "bugs": {
+    "url": "https://github.com/tt-bot-dev/sosamba/issues"
+  },
+  "homepage": "https://tt-bot-dev.github.io/sosamba",
   "dependencies": {
     "chalk": "^3.0.0",
     "eris": "github:abalabahaha/eris#dev"

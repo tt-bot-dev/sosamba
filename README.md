@@ -2,10 +2,10 @@
 [![Build status][azp badge]][azp]
 <hr>
 
-An OOP-based framework based on [Eris]. An example bot is provided [here](https://github.com/tt-bot-dev/sosamba/tree/master/example)
+An OOP-based framework based on [Eris]. An example bot is provided [here](https://github.com/tt-bot-dev/sosamba/tree/master/example).
 
 ## Installation
-Currently this framework is available only from GitHub.  
+Currently, this framework is available only from GitHub.  
 In order to use Sosamba, you need node.js \>=10.0.0.
 ```sh
 # if using NPM
