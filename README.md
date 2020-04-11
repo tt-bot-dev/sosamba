@@ -1,5 +1,5 @@
 # Sosamba
-[![Build status][azp badge]][azp]
+[![Build status][azp badge]][azp] [![Discord][discord shield]][discord invite]
 <hr>
 
 An OOP-based framework based on [Eris]. An example bot is provided [here](https://github.com/tt-bot-dev/sosamba/tree/master/example).
@@ -15,13 +15,13 @@ npm i github:tt-bot-dev/sosamba --save
 yarn add github:tt-bot-dev/sosamba
 ```
 
-## Projects using Sosamba
-Check out the [`sosamba` GitHub topic](https://github.com/topics/sosamba).
-
-## How to use Sosamba
-You can look at the documentation [here][docs], or look at [tt.bot](https://github.com/tt-bot-dev/tt.bot) (currently on the `v4-wip` branch).
+## Useful links
+- [A list of projects that use Sosamba (`sosamba` GitHub topic)](https://github.com/topics/sosamba)
+- [Documentation][docs]
 
 [azp badge]: https://github.com/tt-bot-dev/sosamba/workflows/docs/badge.svg
 [azp]: https://github.com/tt-bot-dev/sosamba/actions
 [docs]: https://tt-bot-dev.github.io/sosamba
 [Eris]: https://github.com/abalabahaha/eris
+[discord shield]: https://discordapp.com/api/guilds/195865382039453697/widget.png?style=shield
+[discord invite]: https://discord.gg/pGN5dMq
