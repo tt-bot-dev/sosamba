@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>StopReason | Sosamba</title>
+	<title>LoggerOptions | Sosamba</title>
 	<meta name="description" content="Documentation for Sosamba">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,116 +54,70 @@
 					<a href="../globals.html">Sosamba</a>
 				</li>
 				<li>
-					<a href="sosamba.stopreason.html">StopReason</a>
+					<a href="sosamba.loggeroptions.html">LoggerOptions</a>
 				</li>
 			</ul>
-			<h1>Enumeration StopReason</h1>
+			<h1>Interface LoggerOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Reasons for stopping the reaction menu</p>
-					</div>
-				</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">LoggerOptions</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="sosamba.stopreason.html#cannot_add_reactions" class="tsd-kind-icon">CANNOT_<wbr>ADD_<wbr>REACTIONS</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="sosamba.stopreason.html#manual_exit" class="tsd-kind-icon">MANUAL_<wbr>EXIT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="sosamba.stopreason.html#message_delete" class="tsd-kind-icon">MESSAGE_<wbr>DELETE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="sosamba.stopreason.html#shutdown" class="tsd-kind-icon">SHUTDOWN</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="sosamba.stopreason.html#timeout" class="tsd-kind-icon">TIMEOUT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sosamba.loggeroptions.html#ignoreerrors" class="tsd-kind-icon">ignore<wbr>Errors</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sosamba.loggeroptions.html#level" class="tsd-kind-icon">level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sosamba.loggeroptions.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="cannot_add_reactions" class="tsd-anchor"></a>
-					<h3>CANNOT_<wbr>ADD_<wbr>REACTIONS</h3>
-					<div class="tsd-signature tsd-kind-icon">CANNOT_<wbr>ADD_<wbr>REACTIONS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 2</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ignoreerrors" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ignore<wbr>Errors</h3>
+					<div class="tsd-signature tsd-kind-icon">ignore<wbr>Errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L35">lib/sosamba.d.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L534">lib/sosamba.d.ts:534</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Permissions to add reactions were denied</p>
-						</div>
-					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="manual_exit" class="tsd-anchor"></a>
-					<h3>MANUAL_<wbr>EXIT</h3>
-					<div class="tsd-signature tsd-kind-icon">MANUAL_<wbr>EXIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 0</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="level" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> level</h3>
+					<div class="tsd-signature tsd-kind-icon">level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L27">lib/sosamba.d.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L535">lib/sosamba.d.ts:535</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The user manually clicked the stop button</p>
-						</div>
-					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="message_delete" class="tsd-anchor"></a>
-					<h3>MESSAGE_<wbr>DELETE</h3>
-					<div class="tsd-signature tsd-kind-icon">MESSAGE_<wbr>DELETE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 3</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L39">lib/sosamba.d.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L536">lib/sosamba.d.ts:536</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The message containing the menu was deleted</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="shutdown" class="tsd-anchor"></a>
-					<h3>SHUTDOWN</h3>
-					<div class="tsd-signature tsd-kind-icon">SHUTDOWN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 4</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L43">lib/sosamba.d.ts:43</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The bot is shutting down</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="timeout" class="tsd-anchor"></a>
-					<h3>TIMEOUT</h3>
-					<div class="tsd-signature tsd-kind-icon">TIMEOUT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tt-bot-dev/sosamba/blob/f6e0d16/lib/sosamba.d.ts#L31">lib/sosamba.d.ts:31</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The menu timed out</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -177,30 +131,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="sosamba.stopreason.html" class="tsd-kind-icon">Stop<wbr>Reason</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="sosamba.stopreason.html#cannot_add_reactions" class="tsd-kind-icon">CANNOT_<wbr>ADD_<wbr>REACTIONS</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="sosamba.stopreason.html#manual_exit" class="tsd-kind-icon">MANUAL_<wbr>EXIT</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="sosamba.stopreason.html#message_delete" class="tsd-kind-icon">MESSAGE_<wbr>DELETE</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="sosamba.stopreason.html#shutdown" class="tsd-kind-icon">SHUTDOWN</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="sosamba.stopreason.html#timeout" class="tsd-kind-icon">TIMEOUT</a>
-							</li>
-						</ul>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/sosamba.stopreason.html" class="tsd-kind-icon">Stop<wbr>Reason</a>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-namespace">
 						<a href="../classes/sosamba.argumentparser.html" class="tsd-kind-icon">Argument<wbr>Parser</a>
 					</li>
@@ -259,25 +192,40 @@
 						<a href="../classes/sosamba.switchargumentparser.html" class="tsd-kind-icon">Switch<wbr>Argument<wbr>Parser</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.argumentoptions.html" class="tsd-kind-icon">Argument<wbr>Options</a>
+						<a href="sosamba.argumentoptions.html" class="tsd-kind-icon">Argument<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.extensible.html" class="tsd-kind-icon">Extensible</a>
+						<a href="sosamba.extensible.html" class="tsd-kind-icon">Extensible</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.logoptions.html" class="tsd-kind-icon">Log<wbr>Options</a>
+						<a href="sosamba.logoptions.html" class="tsd-kind-icon">Log<wbr>Options</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="sosamba.loggeroptions.html" class="tsd-kind-icon">Logger<wbr>Options</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sosamba.loggeroptions.html#ignoreerrors" class="tsd-kind-icon">ignore<wbr>Errors</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sosamba.loggeroptions.html#level" class="tsd-kind-icon">level</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sosamba.loggeroptions.html#name" class="tsd-kind-icon">name</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="sosamba.serializedargumentparseroptions.html" class="tsd-kind-icon">Serialized<wbr>Argument<wbr>Parser<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.loggeroptions.html" class="tsd-kind-icon">Logger<wbr>Options</a>
+						<a href="sosamba.simpleargumentparseroptions.html" class="tsd-kind-icon">Simple<wbr>Argument<wbr>Parser<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.serializedargumentparseroptions.html" class="tsd-kind-icon">Serialized<wbr>Argument<wbr>Parser<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.simpleargumentparseroptions.html" class="tsd-kind-icon">Simple<wbr>Argument<wbr>Parser<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/sosamba.sosambaclientoptions.html" class="tsd-kind-icon">Sosamba<wbr>Client<wbr>Options</a>
+						<a href="sosamba.sosambaclientoptions.html" class="tsd-kind-icon">Sosamba<wbr>Client<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../globals.html#asyncable" class="tsd-kind-icon">Asyncable</a>
@@ -306,6 +254,9 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
