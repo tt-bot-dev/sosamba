@@ -529,10 +529,19 @@ declare namespace Sosamba {
             context: Context;
         }>;
     }
+
+    interface LoggerOptions {
+        ignoreErrors?: boolean;
+        level?: string[];
+        name: String;
+    }
+
     /**
      * A logging facility
      */
-    export class Logger extends console.Console { }
+    export class Logger extends console.Console {
+        public constructor(options: LoggerOptions);
+    }
 
     /**
      * Constructs a reaction menu-based query menu
