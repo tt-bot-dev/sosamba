@@ -84,9 +84,16 @@ declare namespace Sosamba {
         static Guild: typeof Guild;
         static GuildChannel: typeof GuildChannel;
     }
-
+    /**
+     * The language file format
+     */
+    type Language = (bot: Client) 
+    => Record<string, string | ((...args: any[]) => Asyncable<string>)> & {
+        fallbackLanguage?: string;
+    };
     /**
      * Provides language strings to Sosamba
+     * The language file exports MUST be of the [[Language]] type.
      */
     class I18N {
         /**
@@ -95,7 +102,7 @@ declare namespace Sosamba {
          */
         constructor(bot: Client);
         /**
-         * Adds languages
+         * Adds languages to the global language cache
          * @param path Path to the language folder
          */
         public addLanguages(path: string): Promise<void>
@@ -528,6 +535,13 @@ declare namespace Sosamba {
             response: boolean;
             context: Context;
         }>;
+
+        /**
+         * Translates a string
+         * @param name The string to translate
+         * @param args Optional arguments to pass to the translation module
+         */
+        public t(name: string, ...args: any[]): Promise<string>;
     }
 
     interface LoggerOptions {
