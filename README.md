@@ -9,10 +9,12 @@ Currently, this framework is available only from GitHub.
 In order to use Sosamba, you need node.js \>=10.0.0.
 ```sh
 # if using NPM
-npm i github:tt-bot-dev/sosamba --save
+npm i sosamba --save # stable version
+npm i github:tt-bot-dev/sosamba --save # development version
 
 # if using Yarn
-yarn add github:tt-bot-dev/sosamba
+yarn add sosamba # stable version
+yarn add github:tt-bot-dev/sosamba # development version
 ```
 
 ## Useful links
