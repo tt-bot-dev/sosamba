@@ -1,6 +1,6 @@
 {
   "name": "sosamba",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "An OOP-based framework based on Eris.",
   "main": "index.js",
   "repository": {
