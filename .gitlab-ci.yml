@@ -1,0 +1,18 @@
+image: node:alpine
+
+lint:
+    stage: test
+    script:
+        - npm i
+        - npx eslint .
+
+pages:
+    stage: deploy
+    script:
+        - npm i
+        - npx typedoc
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
