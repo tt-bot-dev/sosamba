@@ -4,14 +4,14 @@ lint:
     stage: test
     script:
         - apk add git
-        - npm i
+        - npm i --only=development
         - npx eslint .
 
 pages:
     stage: deploy
     script:
         - apk add git 
-        - npm i
+        - npm i --only=development
         - npx typedoc
     artifacts:
         paths:
