@@ -3,12 +3,14 @@ image: node:alpine
 lint:
     stage: test
     script:
+        - apk add git
         - npm i
         - npx eslint .
 
 pages:
     stage: deploy
     script:
+        - apk add git 
         - npm i
         - npx typedoc
     artifacts:
