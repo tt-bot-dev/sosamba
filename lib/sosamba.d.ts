@@ -62,7 +62,7 @@ declare namespace Sosamba {
      * @param client The client
      * @return The prefixes to use 
      */ (ctx: Context,
-        client?: Client) => Asyncable<Prefix>;
+            client?: Client) => Asyncable<Prefix>;
     /**
      * Logging options
      */
@@ -87,10 +87,10 @@ declare namespace Sosamba {
     /**
      * The language file format
      */
-    type Language = (bot: Client) 
-    => Record<string, string | ((...args: any[]) => Asyncable<string>)> & {
-        fallbackLanguage?: string;
-    };
+    type Language = (bot: Client)
+        => Record<string, string | ((...args: any[]) => Asyncable<string>)> & {
+            fallbackLanguage?: string;
+        };
     /**
      * Provides language strings to Sosamba
      * The language file exports MUST be of the [[Language]] type.
@@ -130,7 +130,7 @@ declare namespace Sosamba {
         /**
          * Provide a command in case it cannot be found
          */
-        provideCommand?: 
+        provideCommand?:
         /**
          * @param ctx The context
          * @param command The command name
@@ -250,12 +250,12 @@ declare namespace Sosamba {
     /**
      * The filter for a message listener
      */
-    type MessageListenerFilter = 
-    /** 
-     * @param ctx The context
-     * @return `true` to consider the message valid, `false` to consider it invalid
-     */
-    (ctx: Context) => Asyncable<boolean>;
+    type MessageListenerFilter =
+        /** 
+         * @param ctx The context
+         * @return `true` to consider the message valid, `false` to consider it invalid
+         */
+        (ctx: Context) => Asyncable<boolean>;
     /**
      * An utility message awaiter
      */
@@ -567,11 +567,11 @@ declare namespace Sosamba {
      * @param displayAs A function to display the item in the menu
      */
     export function constructQuery<T extends { id: string | number }>(ctx: Context, collection: Collection<T> | T[],
-        predicate: 
-        /** @param query The query */ (query: string) => 
-        /** @param item The item */
-        (item: T) => boolean,
-        itemName: string, displayAs?: 
+        predicate:
+        /** @param query The query */ (query: string) =>
+                /** @param item The item */
+                (item: T) => boolean,
+        itemName: string, displayAs?:
         /** @param item The item */ (item: T) => string): T;
     /**
      * A helper class to query for the users in the bot's cache instead of the guild members
@@ -601,16 +601,11 @@ declare namespace Sosamba {
         /**
          * Reaction menu callbacks
          */
-        public callbacks: {
-            /**
-             * Runs the action for the reaction
-             */
-            [key: string]: 
+        public callbacks: Record<string,
             /**
              * @param menu The menu itself
              */ 
-            (menu: ReactionMenu) => Asyncable<void>;
-        };
+            (menu: ReactionMenu) => Asyncable<void>>;
 
         /**
          * The context tied with this reaction menu
