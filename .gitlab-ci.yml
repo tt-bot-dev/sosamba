@@ -15,4 +15,4 @@ pages:
         paths:
             - public
     only:
-        - master
+        - v1.1.0 
