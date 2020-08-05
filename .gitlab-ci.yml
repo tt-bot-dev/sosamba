@@ -9,6 +9,7 @@ lint:
 pages:
     stage: deploy
     script:
+        - apk add git
         - npm i
         - npx typedoc
     artifacts:
