@@ -9,7 +9,7 @@ lint:
 pages:
     stage: deploy
     script:
-        - npm i --only=development
+        - npm i
         - npx typedoc
     artifacts:
         paths:
