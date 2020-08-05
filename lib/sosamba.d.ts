@@ -136,6 +136,10 @@ declare namespace Sosamba {
          * @param command The command name
          */
         (ctx: Context, command: string) => Asyncable<Command>;
+        /**
+         * Whether to allow looking users up by their usernames. Defaults to `false`
+         */
+        allowUsernameLookup: boolean;
     }
 
     /**
@@ -214,7 +218,7 @@ declare namespace Sosamba {
     /**
      * A facility for listening to messages
      */
-    export class MessageListener {
+    export abstract class MessageListener {
         /**
          * Constructs a message listener
          * @param sosamba The client
@@ -239,12 +243,12 @@ declare namespace Sosamba {
          * @param ctx The context
          * @returns `false` blocks the message listener from executing. `true` allows it to execute.
          */
-        public prerequisites(ctx: Context): Asyncable<boolean>;
+        public prerequisites?(ctx: Context): Asyncable<boolean>;
         /**
          * Runs the message listener
          * @param ctx The context
          */
-        public run(ctx: Context): Asyncable<void>;
+        protected abstract run(ctx: Context): Asyncable<void>;
     }
 
     /**
@@ -268,6 +272,7 @@ declare namespace Sosamba {
             rs<T>(obj: T): Promise<T>;
             timeout: NodeJS.Timeout;
         }>;
+        protected run(ctx: Context): Asyncable<void>;
         /**
          * Waits for a message
          * @param ctx The context
@@ -330,7 +335,7 @@ declare namespace Sosamba {
     /**
      * Handles events coming from Discord
      */
-    export class Event extends SosambaBase {
+    export abstract class Event extends SosambaBase {
         /**
          * Constructs the event structure
          * @param sosamba The client
@@ -344,12 +349,12 @@ declare namespace Sosamba {
          * @param args The event arguments
          * @return `false` to block the event from running, `true` otherwise.
          */
-        public prerequisites(...args: any[]): Asyncable<boolean>;
+        public prerequisites?(...args: any[]): Asyncable<boolean>;
         /**
          * Runs the event
          * @param args The event arguments
          */
-        public run(...args: any[]): Asyncable<void>;
+        public abstract run(...args: any[]): Asyncable<void>;
     }
 
     /**
@@ -371,7 +376,7 @@ declare namespace Sosamba {
     /**
      * A bot command
      */
-    export class Command extends SosambaBase {
+    export abstract class Command extends SosambaBase {
         /**
          * Constructs a command
          * @param sosamba The client
@@ -435,19 +440,19 @@ declare namespace Sosamba {
          * @param ctx The context
          * @returns `false` to prevent running the command, `true` otherwise.
          */
-        public permissionCheck(ctx: Context): Asyncable<boolean>
+        public permissionCheck?(ctx: Context): Asyncable<boolean>;
         /**
          * Runs this command
          * @param ctx The context
          * @param args The command arguments
          */
-        public run(ctx: Context, args: any): Asyncable<void>;
+        public abstract run(ctx: Context, args: any): Asyncable<void>;
     }
 
     /**
      * Parses the arguments
      */
-    export class ArgumentParser {
+    export abstract class ArgumentParser {
         /**
          * Constructs an argument parser
          * @param client The client
@@ -463,12 +468,12 @@ declare namespace Sosamba {
          * @param ctx The context
          * @returns The parsed arguments
          */
-        parse(content: string, ctx?: Context): any;
+        abstract parse(content: string, ctx?: Context): any;
         /**
          * Provides an usage string;
          * @param detailed Whether the usage string should be detailed or not
          */
-        provideUsageString(detailed?: boolean): string;
+        provideUsageString?(detailed?: boolean): string;
     }
 
     /**
@@ -632,7 +637,7 @@ declare namespace Sosamba {
          * @param emoji The emoji
          * @return Whether to run the reaction menu callback or not
          */
-        public canRunCallback(emoji: string): Asyncable<boolean>;
+        public canRunCallback?(emoji: string): Asyncable<boolean>;
         /**
          * Adds the emoji for the menu
          */
@@ -641,7 +646,7 @@ declare namespace Sosamba {
          * Stops the menu
          * @param reason The reason why the menu stopped
          */
-        public stopCallback(reason: StopReason): Asyncable<void>;
+        public stopCallback?(reason: StopReason): Asyncable<void>;
     }
 
     /**
