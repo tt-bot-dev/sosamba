@@ -16,4 +16,4 @@ pages:
         paths:
             - public
     only:
-        - v1.1.0 
+        - master 
