@@ -12,9 +12,9 @@
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://github.com/tt-bot-dev/sosamba/issues"
+    "url": "https://owo.codes/tt.bot/frameworks/sosamba/-/issues"
   },
-  "homepage": "https://tt-bot-dev.github.io/sosamba",
+  "homepage": "https://tt.bot.owo.codes/sosamba",
   "dependencies": {
     "chalk": "^3.0.0",
     "eris": "github:abalabahaha/eris#dev"
