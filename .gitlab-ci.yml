@@ -1,0 +1,19 @@
+image: node:alpine
+
+lint:
+    stage: test
+    script:
+        - npm i --only=development
+        - npx eslint .
+
+pages:
+    stage: deploy
+    script:
+        - apk add git
+        - npm i
+        - npx typedoc
+    artifacts:
+        paths:
+            - public
+    only:
+        - master 

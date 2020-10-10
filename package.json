@@ -1,19 +1,20 @@
 {
   "name": "sosamba",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An OOP-based framework based on Eris.",
   "main": "index.js",
+  "module": "index.mjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tt-bot-dev/sosamba.git"
+    "url": "git+https://owo.codes/tt.bot/frameworks/sosamba.git"
   },
   "author": "TTtie <me@tttie.cz>",
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://github.com/tt-bot-dev/sosamba/issues"
+    "url": "https://owo.codes/tt.bot/frameworks/sosamba/-/issues"
   },
-  "homepage": "https://tt-bot-dev.github.io/sosamba",
+  "homepage": "https://tt.bot.owo.codes/sosamba",
   "dependencies": {
     "chalk": "^3.0.0",
     "eris": "github:abalabahaha/eris#dev"

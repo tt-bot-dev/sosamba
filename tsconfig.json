@@ -14,7 +14,7 @@
       "includeDeclarations": true,
       "excludeExternals": true,
       "readme": "README.md",
-      "out": "docs/",
+      "out": "public/",
       "inputFiles": ["lib/sosamba.d.ts"],
       "mode": "file",
       "entryPoint": "Sosamba",
