@@ -5,16 +5,17 @@
 An OOP-based framework based on [Eris]. An example bot is provided [here](https://owo.codes/tt.bot/frameworks/sosamba/-/tree/master/example).
 
 ## Installation
-Currently, this framework is available only from GitHub.  
 In order to use Sosamba, you need node.js \>=10.0.0.
 ```sh
 # if using NPM
 npm i sosamba --save # stable version
-npm i github:tt-bot-dev/sosamba --save # development version
+npm i git+https://owo.codes/tt.bot/frameworks/sosamba.git --save # development version
+npm i github:tt-bot-dev/sosamba --save # development version from GitHub mirror
 
 # if using Yarn
 yarn add sosamba # stable version
-yarn add github:tt-bot-dev/sosamba # development version
+yarn add git+https://owo.codes/tt.bot/frameworks/sosamba.git # development version
+yarn add github:tt-bot-dev/sosamba # development version from GitHub mirror
 ```
 
 ## Useful links
