@@ -15,8 +15,8 @@
   },
   "homepage": "http://tt.bot.owo.codes/frameworks/sosamba",
   "dependencies": {
-    "chalk": "^3.0.0",
-    "eris": "github:abalabahaha/eris#dev"
+    "eris": "github:abalabahaha/eris#dev",
+    "kleur": "^4.1.3"
   },
   "typings": "lib/sosamba.d.ts",
   "devDependencies": {
