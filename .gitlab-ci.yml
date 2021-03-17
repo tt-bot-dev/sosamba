@@ -3,6 +3,7 @@ image: node:alpine
 lint:
     stage: test
     script:
+        - apk add git
         - npm i --only=development
         - npx eslint .
 
