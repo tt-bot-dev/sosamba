@@ -199,6 +199,7 @@ declare namespace Sosamba {
          * Checks if the bot has the permissions in a channel
          * @param channel The channel to check the permissions in
          * @param permission The permission to check
+         * @deprecated Inline the check instead.
          */
         public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean;
         /**
