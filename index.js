@@ -15,6 +15,8 @@ const Integer = require("./lib/structures/serializer/Integer");
 const { constructQuery } = require("./lib/argParsers/switchSerializers/erisObjects");
 const Structures = require("./lib/Structures");
 const MessageListener = require("./lib/structures/MessageListener");
+const LocaleFormatter = require("./lib/structures/LocaleFormatter");
+const Locale = require("./lib/structures/Locale");
 const Eris = require("eris");
 const { Member, User, Guild, GuildChannel } = Eris;
 
@@ -43,5 +45,7 @@ module.exports = {
     constructQuery,
     Structures,
     MessageListener,
+    LocaleFormatter,
+    Locale,
     Eris,
 };
