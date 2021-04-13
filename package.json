@@ -25,7 +25,7 @@
     "typescript": "^4.2.3"
   },
   "peerDependencies": {
-    "eris": "^0.15.0"
+    "eris": "*"
   },
   "scripts": {
     "test": "eslint ."
