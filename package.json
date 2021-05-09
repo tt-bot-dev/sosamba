@@ -20,8 +20,8 @@
   "typings": "lib/sosamba.d.ts",
   "devDependencies": {
     "@tt-bot-dev/eslint-config": "^1.0.1",
-    "eslint": "^7.22.0",
-    "typedoc": "^0.20.32",
+    "eslint": "^7.26.0",
+    "typedoc": "^0.20.36",
     "typescript": "^4.2.3"
   },
   "peerDependencies": {
