@@ -4,7 +4,7 @@ lint:
     stage: test
     script:
         - apk add git
-        - npm i --only=development
+        - npm i
         - npx eslint .
 
 pages:
