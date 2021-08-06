@@ -1,7 +1,7 @@
 {
   "name": "sosamba",
-  "version": "1.1.2",
-  "description": "An OOP-based framework based on Eris.",
+  "version": "2.0.0-dev",
+  "description": "An OOP-based slash command framework based on Eris.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   "typings": "lib/sosamba.d.ts",
   "devDependencies": {
     "@tt-bot-dev/eslint-config": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.26.0",
     "typedoc": "^0.20.36",
     "typescript": "^4.2.3"
@@ -31,7 +33,7 @@
     "test": "eslint ."
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=14.0.0"
   },
   "optionalDependencies": {
     "@types/node": "^14.14.35"

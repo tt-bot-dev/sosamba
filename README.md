@@ -2,10 +2,10 @@
 [![Build status][azp badge]][azp] [![Discord][discord shield]][discord invite]
 <hr>
 
-An OOP-based framework based on [Eris]. An example bot is provided [here](https://owo.codes/tt.bot/frameworks/sosamba/-/tree/master/example).
+An OOP-based slash command framework based on [Eris]. An example bot is provided [here](https://owo.codes/tt.bot/frameworks/sosamba/-/tree/master/example).
 
 ## Installation
-In order to use Sosamba, you need node.js \>=10.0.0.
+In order to use Sosamba, you need node.js \>=14.0.0.
 ```sh
 # if using NPM
 npm i sosamba --save # stable version
