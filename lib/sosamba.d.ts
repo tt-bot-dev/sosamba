@@ -13,9 +13,10 @@ import {
     Member,
     AnyGuildChannel,
     MessageContent,
-    MessageFile,
+    FileContent as MessageFile,
     GuildChannel
 } from "eris";
+import Eris = require("eris");
 declare namespace Sosamba {
     /**
      * Reasons for stopping the reaction menu
@@ -347,6 +348,7 @@ declare namespace Sosamba {
         public constructor(sosamba: Client, fileName: string, filePath: string, options: { once: boolean, name: string });
         /**
          * Checks whether the requirements needed to run this event are met
+         * This is not executed if this event is an one-off handler (`once` is set to `true`)
          * @param args The event arguments
          * @return `false` to block the event from running, `true` otherwise.
          */
@@ -393,23 +395,11 @@ declare namespace Sosamba {
             /**
              * The command argument string
              */
-            args?: string,
-            /**
-             * The command argument parser
-             */
-            argParser?: ArgumentParser,
+            args?: Eris.ApplicationCommandOptions[],
             /**
              * The command description
              */
             description?: string,
-            /**
-             * Whether to display the command in the default help command or not
-             */
-            displayInHelp?: boolean,
-            /**
-             * Aliases for this command
-             */
-            aliases?: string[];
         })
         /**
         * The command name
@@ -418,23 +408,11 @@ declare namespace Sosamba {
         /**
          * The command argument string
          */
-        public args?: string;
-        /**
-         * The command argument parser
-         */
-        public argParser?: ArgumentParser;
+        public args?: Eris.ApplicationCommandOptions[];
         /**
          * The command description
          */
         public description?: string;
-        /**
-         * Whether to display the command in the default help command or not
-         */
-        public displayInHelp: boolean;
-        /**
-         * Aliases for this command
-         */
-        public aliases: string[];
 
         /**
          * Checks whether the user has the permissions to run this command
@@ -448,33 +426,6 @@ declare namespace Sosamba {
          * @param args The command arguments
          */
         public abstract run(ctx: Context, args: any): Asyncable<void>;
-    }
-
-    /**
-     * Parses the arguments
-     */
-    export abstract class ArgumentParser {
-        /**
-         * Constructs an argument parser
-         * @param client The client
-         */
-        public constructor(client: Client);
-        /**
-         * The client
-         */
-        public sosamba: Client;
-        /**
-         * Parses the arguments
-         * @param content The string to parse
-         * @param ctx The context
-         * @returns The parsed arguments
-         */
-        abstract parse(content: string, ctx?: Context): any;
-        /**
-         * Provides an usage string;
-         * @param detailed Whether the usage string should be detailed or not
-         */
-        provideUsageString?(detailed?: boolean): string;
     }
 
     /**
@@ -712,78 +663,6 @@ declare namespace Sosamba {
      */
     class Integer { }
 
-    /**
-     * Options for a [[SerializedArgumentParser]]
-     */
-    interface SerializedArgumentParserOptions {
-        /**
-         * The arguments
-         */
-        args: ArgumentOptions[];
-    }
-
-    /**
-     * Like [[SimpleArgumentParser]], but serializes the data into the respective data types
-     */
-    export class SerializedArgumentParser extends SimpleArgumentParser {
-        /**
-         * Constructs a serialized argument parser
-         * @param sosamba The client
-         * @param options The options of the parser
-         */
-        public constructor(sosamba: Client, options: SerializedArgumentParserOptions & SimpleArgumentParserOptions);
-        /**
-         * Parses the arguments and serializes them
-         * @param content The string to parse
-         * @param ctx The context
-         * @returns An array of serialized arguments
-         */
-        public parse(content: string, ctx: Context): any[];
-        /**
-         * When used as a default value for an argument, the default will be `null`
-         */
-        public static None: symbol;
-    }
-
-    /**
-     * A simple argument parser
-     */
-    export class SimpleArgumentParser extends ArgumentParser {
-        /**
-         * Constructs a simple argument parser
-         * @param sosamba The client
-         * @param options The options of the parser
-         */
-        public constructor(sosamba: Client, options: SimpleArgumentParserOptions);
-        /**
-         * Parses the string
-         * @param content The string to parse
-         * @param ctx The context
-         * @returns An array of strings containing the parsed arguments
-         */
-        public parse(content: string, ctx: Context): string[];
-    }
-
-    /**
-     * An argument parser that uses switches in format of `key:value`
-     */
-    export class SwitchArgumentParser extends SerializedArgumentParser {
-        /**
-         * Constructs a switch argument parser
-         * @param sosamba The client
-         * @param args The arguments, where the key is an argument name
-         */
-        public constructor(sosamba: Client, args: {
-            [key: string]: ArgumentOptions
-        })
-        /**
-         * Parses the arguments and serializes them
-         * @param content The string to parse
-         * @param ctx The context
-         * @returns An array of serialized arguments
-         */
-        public parse(content: string, ctx: Context): any[];
-    }
 
     /**
      * The structures that are extensible

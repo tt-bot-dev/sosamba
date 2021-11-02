@@ -27,7 +27,7 @@
     "typescript": "^4.2.3"
   },
   "peerDependencies": {
-    "eris": "*"
+    "eris": "github:abalabahaha/eris#dev"
   },
   "scripts": {
     "test": "eslint ."
