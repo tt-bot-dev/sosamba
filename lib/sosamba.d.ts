@@ -504,7 +504,7 @@ declare namespace Sosamba {
     interface LoggerOptions {
         ignoreErrors?: boolean;
         level?: string[];
-        name: String;
+        name: string;
     }
 
     /**

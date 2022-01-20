@@ -9,5 +9,8 @@
             "no-extra-parens": "off",
             "@typescript-eslint/no-extra-parens": "error"
         }
-    }]
+    }],
+    "parserOptions": {
+        "ecmaVersion": 2022
+    }
 }
