@@ -3,7 +3,6 @@
 - `Command#argParser`, `Command#displayInHelp`, and `Command#aliases` are no longer applicable
 - `Command#args` is now a list of slash command options as defined by Discord
 - Commands will be passed a `InteractionContext` instead of a old `Context`
-    - `Context` will still be passed for message listeners
 - Removed `MessageAwaiter#askYesNo`; use components/buttons instead
 
 

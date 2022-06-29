@@ -14,7 +14,7 @@ import {
     AnyGuildChannel,
     MessageContent,
     FileContent as MessageFile,
-    GuildChannel
+    GuildChannel,
 } from "eris";
 import Eris = require("eris");
 declare namespace Sosamba {
@@ -80,9 +80,13 @@ declare namespace Sosamba {
      */
     export class Serializers {
         static GlobalUser: typeof GlobalUser;
+
         static Member: typeof Member;
+
         static User: typeof User;
+
         static Guild: typeof Guild;
+
         static GuildChannel: typeof GuildChannel;
     }
     /**
@@ -102,11 +106,13 @@ declare namespace Sosamba {
          * @param bot The client
          */
         constructor(bot: Client);
+
         /**
          * Adds languages to the global language cache
          * @param path Path to the language folder
          */
         public addLanguages(path: string): Promise<void>
+
         /**
          * Gets a translated string
          * @param term The term name
@@ -153,6 +159,7 @@ declare namespace Sosamba {
          * @param options The client options you'd like to use
          */
         constructor(token: string, options?: SosambaClientOptions);
+
         /**
          * The client options
          */
@@ -169,33 +176,40 @@ declare namespace Sosamba {
          * @param path The path to the command files
          */
         public loadCommands(path?: string): Promise<void>;
+
         /**
          * Loads the events
          * @param path The path to the event files
          */
         public loadEvents(path?: string): Promise<void>;
+
         /**
          * The client log
          */
         public log: Logger;
+
         /**
          * A collection holding the commands
          */
         public commands: Collection<Command>;
+
         /**
          * A collection holding the events
          */
         public events: Collection<Event>;
+
         /**
          * A collection holding the active reaction menus
          */
         public reactionMenus: Collection<ReactionMenu>;
+
         /**
          * Gets the prefix for a context
          * @param ctx The context
          * @return The prefixes to use
          */
         public getPrefix(ctx: Context): Promise<Prefix>;
+
         /**
          * Checks if the bot has the permissions in a channel
          * @param channel The channel to check the permissions in
@@ -203,14 +217,17 @@ declare namespace Sosamba {
          * @deprecated Inline the check instead.
          */
         public hasBotPermission(channel: AnyGuildChannel, permission: string): boolean;
+
         /**
          * A collection of message listeners
          */
         public messageListeners: Collection<MessageListener>;
+
         /**
          * An utility message awaiter
          */
         public messageAwaiter: MessageAwaiter;
+
         /**
          * An i18n module
          */
@@ -228,24 +245,29 @@ declare namespace Sosamba {
          * @param allowEdit Controls whether the listener should be triggered on message edits
          */
         public constructor(sosamba: Client, name?: string, allowEdit?: boolean);
+
         /**
          * The client
          */
         public sosamba: Client;
+
         /**
          * The listener name
          */
         public name: string;
+
         /**
          * The listener name
          */
         public id: string;
+
         /**
          * The requirements to run this message listener
          * @param ctx The context
          * @returns `false` blocks the message listener from executing. `true` allows it to execute.
          */
         public prerequisites?(ctx: Context): Asyncable<boolean>;
+
         /**
          * Runs the message listener
          * @param ctx The context
@@ -274,7 +296,9 @@ declare namespace Sosamba {
             rs<T>(obj: T): Promise<T>;
             timeout: NodeJS.Timeout;
         }>;
+
         protected run(ctx: Context): Asyncable<void>;
+
         /**
          * Waits for a message
          * @param ctx The context
@@ -282,6 +306,7 @@ declare namespace Sosamba {
          * @param timeout The timeout of awaiting the message
          */
         public waitForMessage(ctx: Context, filter?: MessageListenerFilter, timeout?: number): Promise<Context>;
+
         /**
          * Asks for a `y`, `yes`, `n` or `no` response with a 10 second timeout
          * @param ctx The context
@@ -303,22 +328,27 @@ declare namespace Sosamba {
          * @param filePath The file path of the loaded module
          */
         public constructor(sosamba: Client, fileName?: string, filePath?: string);
+
         /**
          * The client
          */
         public sosamba: Client;
+
         /**
          * The file name of this module
          */
         public file: string;
+
         /**
          * The path to this module
          */
         public path: string;
+
         /**
          * The ID of the module
          */
         public id: string;
+
         /**
          * The logger of the module
          */
@@ -328,6 +358,7 @@ declare namespace Sosamba {
          * Mounts the module
          */
         public mount(): void;
+
         /**
          * Unmounts the module
          */
@@ -346,6 +377,7 @@ declare namespace Sosamba {
          * @param options The event options
          */
         public constructor(sosamba: Client, fileName: string, filePath: string, options: { once: boolean, name: string });
+
         /**
          * Checks whether the requirements needed to run this event are met
          * This is not executed if this event is an one-off handler (`once` is set to `true`)
@@ -353,6 +385,7 @@ declare namespace Sosamba {
          * @return `false` to block the event from running, `true` otherwise.
          */
         public prerequisites?(...args: any[]): Asyncable<boolean>;
+
         /**
          * Runs the event
          * @param args The event arguments
@@ -370,6 +403,7 @@ declare namespace Sosamba {
          * @param ignore Whether to ignore the error or not
          */
         public constructor(message: string, ignore?: boolean);
+
         /**
          * Whether to ignore the error or not
          */
@@ -401,14 +435,17 @@ declare namespace Sosamba {
              */
             description?: string,
         })
+
         /**
         * The command name
         */
         public name: string;
+
         /**
          * The command argument string
          */
         public args?: Eris.ApplicationCommandOptions[];
+
         /**
          * The command description
          */
@@ -420,6 +457,7 @@ declare namespace Sosamba {
          * @returns `false` to prevent running the command, `true` otherwise.
          */
         public permissionCheck?(ctx: Context): Asyncable<boolean>;
+
         /**
          * Runs this command
          * @param ctx The context
@@ -438,45 +476,55 @@ declare namespace Sosamba {
          * @param msg The message tied with this context
          */
         public constructor(sosamba: Client, msg: Message);
+
         /**
          * The client
          */
         public sosamba: Client;
+
         /**
          * The guild this context was made in
          */
         public guild: Guild;
+
         /**
          * The channel this context was made in
          */
         public channel: TextChannel;
+
         /**
          * The author of this context
          */
         public author: User;
+
         /**
          * A member instance of the author of this context
          */
         public member: Member;
+
         /**
          * The message tied with this context
          */
         public message: Message;
+
         /**
          * The message tied with this context
          */
         public msg: Message;
+
         /**
          * Sends a message and edits it if it was already sent
          * @param content The message content
          * @param file The file(s) to send
          */
         public send(content: MessageContent, file?: MessageFile): Promise<Message>;
+
         /**
          * Registers a reaction menu for this context
          * @param menu The reaction menu to register
          */
         public registerReactionMenu(menu: ReactionMenu): Promise<void>;
+
         /**
          * A shortcut for {@link MessageAwaiter.waitForMessage}
          * @param filter The message filter
@@ -547,14 +595,17 @@ declare namespace Sosamba {
          * @param msg A message made by the bot
          */
         public constructor(ctx: Context, msg: Message);
+
         /**
          * The client
          */
         public sosamba: Client;
+
         /**
          * The ID of the user who initiated the menu
          */
         public user: string;
+
         /**
          * Reaction menu callbacks
          */
@@ -568,32 +619,39 @@ declare namespace Sosamba {
          * The context tied with this reaction menu
          */
         public ctx: Context;
+
         /**
          * The context tied with this reaction menu
          */
         public context: Context;
+
         /**
          * The bot's message tied with this reaction menu
          */
         public message: Message;
+
         /**
          * The ID of bot's message
          */
         public id: string;
+
         /**
          * The reaction menu timeout. `false` if none
          */
         public timeout: number | boolean;
+
         /**
          * Controls whether to run the callback or not
          * @param emoji The emoji
          * @return Whether to run the reaction menu callback or not
          */
         public canRunCallback?(emoji: string): Asyncable<boolean>;
+
         /**
          * Adds the emoji for the menu
          */
         public prepareEmoji(): Asyncable<void>;
+
         /**
          * Stops the menu
          * @param reason The reason why the menu stopped
@@ -686,11 +744,13 @@ declare namespace Sosamba {
          * ```
          */
         public static get<T extends keyof Extensible>(structure: T): Extensible[T];
+
         /**
          * Gets a structure in case the structure isn't defined in the TypeScript definition file
          * @param structure The structure name
          */
         public static get(structure: string): Function;
+
         /**
          * Extends a structure
          * @param structure The name of the structure you'd like to extend
@@ -700,6 +760,7 @@ declare namespace Sosamba {
          */
         public static extend<T extends keyof Extensible, N extends Extensible[T]>(structure: string, extender:
             /** @param cls The extensible class */ (cls: Extensible[T]) => N): void;
+
         /**
          * Extends a structure in case the structure isn't defined in the TypeScript definition file
          * @param structure The name of the structure you'd like to extend

@@ -14,9 +14,9 @@ class HiCommand extends Command {
                     type: [Member, String], 
                     default: "world",
                     name: "who",
-                    description: "Who to say hi to"
-                }]
-            })
+                    description: "Who to say hi to",
+                }],
+            }),
         });
     }
 

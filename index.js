@@ -22,7 +22,7 @@ const Serializers = {
     User,
     Guild,
     GuildChannel,
-    Integer
+    Integer,
 };
 
 module.exports = {

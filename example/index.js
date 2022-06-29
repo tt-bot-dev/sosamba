@@ -7,14 +7,14 @@ const client = new Client("NeveR.goNnA_gIve.You_Up_NevEr_GonNa_LeT_You_dOwn", {
     // Disable debug event logging
     // If not set, setting NODE_ENV=production will disable it
     log: {
-        level: ["info", "warn", "error", "log"]
-    }
+        level: ["info", "warn", "error", "log"],
+    },
 });
 
 // The client is an Eris instance: you can listen to events using it
 // However, you will be missing a log instance and other goodies :/
 client.on("ready", () => {
-    //eslint-disable-next-line no-console
+    // eslint-disable-next-line no-console
     console.info("I'm connected!");
 });
 
@@ -24,7 +24,7 @@ class TestingCommand extends Command {
     constructor() {
         super(client, undefined, undefined, {
             name: "hello",
-            description: "Says \"hello\"."
+            description: "Says \"hello\".",
         });
     }
 

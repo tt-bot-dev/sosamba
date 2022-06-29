@@ -5,7 +5,7 @@ const { Event } = require("sosamba");
 class ShardReadyEvent extends Event {
     constructor(...args) {
         super(...args, {
-            name: "shardReady"
+            name: "shardReady",
         });
     }
 
