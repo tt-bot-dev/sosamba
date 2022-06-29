@@ -15,8 +15,8 @@ import {
     MessageContent,
     FileContent as MessageFile,
     GuildChannel,
+    ApplicationCommandOptions,
 } from "eris";
-import Eris = require("eris");
 declare namespace Sosamba {
     /**
      * Reasons for stopping the reaction menu
@@ -429,7 +429,7 @@ declare namespace Sosamba {
             /**
              * The command argument string
              */
-            args?: Eris.ApplicationCommandOptions[],
+            args?: ApplicationCommandOptions[],
             /**
              * The command description
              */
@@ -444,7 +444,7 @@ declare namespace Sosamba {
         /**
          * The command argument string
          */
-        public args?: Eris.ApplicationCommandOptions[];
+        public args?: ApplicationCommandOptions[];
 
         /**
          * The command description
@@ -720,55 +720,6 @@ declare namespace Sosamba {
      * A serializer for non-floating point numbers
      */
     class Integer { }
-
-
-    /**
-     * The structures that are extensible
-     */
-    interface Extensible {
-        Context: typeof Context;
-    }
-
-    /**
-     * Allows users to extend Sosamba's native structures
-     */
-    export class Structures {
-        /**
-         * Gets a structure
-         * @param structure The structure name
-         * @typeparam T The class you'd like to use
-         * @example 
-         * ```ts
-         * import { Structures, Context } from "sosamba";
-         * const ctxClass = Structures.get<Context>("Context");
-         * ```
-         */
-        public static get<T extends keyof Extensible>(structure: T): Extensible[T];
-
-        /**
-         * Gets a structure in case the structure isn't defined in the TypeScript definition file
-         * @param structure The structure name
-         */
-        public static get(structure: string): Function;
-
-        /**
-         * Extends a structure
-         * @param structure The name of the structure you'd like to extend
-         * @param extender The function that takes the old class as the parameter and returns the new class
-         * @typeparam T The class you'd like to replace
-         * @typeparam N The subclass of T you'd like to replace T with
-         */
-        public static extend<T extends keyof Extensible, N extends Extensible[T]>(structure: string, extender:
-            /** @param cls The extensible class */ (cls: Extensible[T]) => N): void;
-
-        /**
-         * Extends a structure in case the structure isn't defined in the TypeScript definition file
-         * @param structure The name of the structure you'd like to extend
-         * @param extender The function that takes the old class as the parameter and returns the new class
-         * @typeparam T The subclass of the structure you'd like to replace the structure with
-         */
-        public static extend<T extends Function>(structure: string, extender: /** @param cls The extensible class */ (cls: typeof Function) => T): void;
-    }
 }
 
 export = Sosamba;
