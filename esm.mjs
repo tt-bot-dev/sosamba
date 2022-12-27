@@ -7,7 +7,6 @@ export const {
     Command,
     Constants,
     ReactionMenu,
-    Serializers,
     Structures,
     MessageListener,
     LocaleFormatter,
