@@ -9,6 +9,11 @@
             "no-extra-parens": "off",
             "@typescript-eslint/no-extra-parens": "error"
         }
+    }, {
+        "files": "./esm.mjs",
+        "parserOptions": {
+            "sourceType": "module"
+        }
     }],
     "parserOptions": {
         "ecmaVersion": 2022
