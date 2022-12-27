@@ -16,7 +16,7 @@ import {
     FileContent as MessageFile,
     GuildChannel,
     ApplicationCommandOptions,
-} from "eris";
+} from "@projectdysnomia/dysnomia";
 declare namespace Sosamba {
     /**
      * Reasons for stopping the reaction menu
@@ -74,7 +74,9 @@ declare namespace Sosamba {
         level?: string[]
     }
 
-    const Eris: typeof import("eris");
+    /** @deprecated */
+    const Eris: typeof import("@projectdysnomia/dysnomia");
+    const Dysnomia: typeof import("@projectdysnomia/dysnomia");
     /**
      * Sosamba serializers
      */

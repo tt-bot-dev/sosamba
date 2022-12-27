@@ -13,8 +13,8 @@ const LocaleFormatter = require("./lib/structures/LocaleFormatter");
 const Locale = require("./lib/structures/Locale");
 const InteractionContext = require("./lib/structures/InteractionContext");
 const InteractionListener = require("./lib/structures/InteractionListener");
-const Eris = require("eris");
-const { Member, User, Guild, GuildChannel } = Eris;
+const Dysnomia = require("@projectdysnomia/dysnomia");
+const { Member, User, Guild, GuildChannel } = Dysnomia;
 
 const Serializers = {
     GlobalUser,
@@ -39,5 +39,6 @@ module.exports = {
     Locale,
     InteractionContext,
     InteractionListener,
-    Eris,
+    Eris: Dysnomia, // [DEPRECATED]
+    Dysnomia,
 };

@@ -37,9 +37,6 @@
     "typedoc": "^0.22.10",
     "typescript": "^4.5.4"
   },
-  "peerDependencies": {
-    "eris": "github:DonovanDMC/eris#f6d0bbf669ca5bbe1577a107c0570c149674cd8e"
-  },
   "scripts": {
     "test": "eslint ."
   },
@@ -48,5 +45,8 @@
   },
   "optionalDependencies": {
     "@types/node": "^14.14.35"
+  },
+  "peerDependencies": {
+    "@projectdysnomia/dysnomia": "github:projectdysnomia/dysnomia#dev"
   }
 }

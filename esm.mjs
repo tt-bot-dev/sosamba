@@ -15,4 +15,5 @@ export const {
     InteractionContext,
     InteractionListener,
     Eris,
+    Dysnomia
 } = Sosamba;
