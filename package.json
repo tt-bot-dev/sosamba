@@ -47,6 +47,6 @@
     "@types/node": "^14.14.35"
   },
   "peerDependencies": {
-    "@projectdysnomia/dysnomia": "github:projectdysnomia/dysnomia#dev"
+    "@projectdysnomia/dysnomia": "^0.1.0 || github:projectdysnomia/dysnomia#dev"
   }
 }
